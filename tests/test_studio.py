@@ -27,7 +27,10 @@ def test_profils_et_choix_du_moteur():
     p = rm.resoudre_profil("PREVIEW", FAUX_CPU)
     assert p["moteur"] == "cycles" and p["largeur"] == 360
     p = rm.resoudre_profil("PREVIEW", FAUX_EEVEE)
+    assert p["moteur"] == "cycles"  # sans GPU, EEVEE logiciel est plus lent : Cycles CPU choisi
+    p = rm.resoudre_profil("PREVIEW", {**FAUX_EEVEE, "gpu": [{"nom": "x"}]})
     assert p["moteur"] == "eevee" and p["prefixe"] == ["xvfb-run", "-a"]
+    assert rm.resoudre_profil("PREVIEW", FAUX_EEVEE, "eevee")["moteur"] == "eevee"
     assert rm.resoudre_profil("auto", FAUX_CPU)["profil"] == "STANDARD"
     c = rm.resoudre_profil("auto", FAUX_GPU)
     assert c["profil"] == "CINEMA" and c["appareil"] == "GPU" and not c["accord_requis"]

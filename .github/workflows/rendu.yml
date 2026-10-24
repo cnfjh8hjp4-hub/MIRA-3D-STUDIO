@@ -93,10 +93,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          D=/tmp/pub; mkdir -p $D/run-${{ github.run_number }}; cp -r livraison/. $D/run-${{ github.run_number }}/
+          D=/tmp/pub; mkdir -p $D/run-${{ github.run_id }}; cp -r livraison/. $D/run-${{ github.run_id }}/
           cd $D && git init -q -b resultats
           git config user.name "mira-3d-studio"; git config user.email "studio@users.noreply.github.com"
           git fetch -q "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" resultats 2>/dev/null \
             && git reset -q --mixed FETCH_HEAD || true
-          git add run-${{ github.run_number }} && git commit -qm "Rendu ${{ github.run_number }} : ${{ inputs.scene }} ${{ inputs.profil }}" || exit 0
+          git add run-${{ github.run_id }} && git commit -qm "Rendu ${{ github.run_number }} : ${{ inputs.scene }} ${{ inputs.profil }}" || exit 0
           git push -q "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" resultats

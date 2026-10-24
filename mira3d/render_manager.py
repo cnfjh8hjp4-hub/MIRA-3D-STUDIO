@@ -28,6 +28,9 @@ def resoudre_profil(nom, m, moteur_force=None):
     P = PROFILS[nom]
     ordre = [moteur_force] if moteur_force else P["preference"]
     for cle in ordre:
+        # sans GPU, EEVEE tourne en OpenGL logiciel : mesuré 3 fois plus lent que Cycles CPU (25/10) → ignoré sauf demande
+        if cle == "eevee" and not moteur_force and not m.get("gpu"):
+            continue
         if cle in m.get("moteurs_ok", []):
             base = "cycles" if cle.startswith("cycles") else "eevee"
             if base not in P:
