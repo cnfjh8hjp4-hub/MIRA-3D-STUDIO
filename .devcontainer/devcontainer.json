@@ -1,0 +1,15 @@
+{
+  "name": "MIRA 3D STUDIO",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bookworm",
+  "hostRequirements": { "cpus": 2, "memory": "8gb", "storage": "32gb" },
+  "postCreateCommand": "bash scripts/installer.sh",
+  "postStartCommand": "python3 scripts/verifier.py --court",
+  "containerEnv": { "MIRA3D_PRESET": "eco", "BLENDER_BIN": "/opt/blender/blender" },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"],
+      "settings": { "terminal.integrated.defaultProfile.linux": "bash" }
+    },
+    "codespaces": { "openFiles": ["README.md"] }
+  }
+}

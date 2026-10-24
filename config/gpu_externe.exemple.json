@@ -1,0 +1,9 @@
+{
+  "_avertissement": "Modèle de configuration pour un serveur GPU externe. RIEN n'est loué ni connecté. Les accès (hôte, utilisateur, clé SSH) iront dans les secrets GitHub, jamais ici.",
+  "actif": false,
+  "secrets_attendus": ["MIRA3D_GPU_HOTE", "MIRA3D_GPU_UTILISATEUR", "MIRA3D_GPU_CLE_SSH"],
+  "dossier_distant": "~/mira-3d-studio",
+  "profil": "CINEMA",
+  "cout_horaire_estime_eur": null,
+  "plafond_eur_par_rendu": 0
+}

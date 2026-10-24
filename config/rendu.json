@@ -1,0 +1,7 @@
+{
+  "_doc": "Réglages généraux. Les profils de rendu (PREVIEW, STANDARD, CINEMA) sont dans config/profils.json.",
+  "blender_version": "4.2.3",
+  "blender_compatibles": ["4.2.3", "4.5.3"],
+  "fps": 24,
+  "fond": "#04121a"
+}

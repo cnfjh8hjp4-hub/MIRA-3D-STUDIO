@@ -1,0 +1,102 @@
+name: Rendu (Render Manager)
+
+# Depuis l'iPhone : Actions → « Rendu (Render Manager) » → Run workflow.
+# Contrôle qualité → estimation → rendu avec reprise → MP4. Si l'estimation dépasse le budget, rien n'est rendu
+# sans cocher « accord ». Les images déjà validées sont gardées en cache d'un lancement à l'autre.
+on:
+  workflow_dispatch:
+    inputs:
+      scene:
+        description: "Scène dans scenes/ (ex. demo_hologramme.py)"
+        required: true
+        default: "demo_hologramme.py"
+      profil:
+        description: "PREVIEW, STANDARD, CINEMA ou auto"
+        required: true
+        default: "STANDARD"
+        type: choice
+        options: [PREVIEW, STANDARD, CINEMA, auto]
+      accord:
+        description: "J'accepte un rendu plus long que le budget"
+        type: boolean
+        default: false
+      budget:
+        description: "Budget sans accord, en minutes"
+        default: "20"
+
+permissions:
+  contents: write   # uniquement pour publier les résultats sur la branche « resultats »
+
+concurrency:
+  group: rendu
+  cancel-in-progress: false
+
+jobs:
+  rendu:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - uses: actions/cache@v4
+        with:
+          path: /home/runner/blender
+          key: blender-${{ hashFiles('config/rendu.json') }}
+      - name: Reprendre les images déjà rendues et les ressources
+        uses: actions/cache@v4
+        with:
+          path: |
+            sorties/projets
+            cache/polyhaven
+          key: production-${{ github.run_id }}
+          restore-keys: production-
+      - name: Installer
+        run: bash scripts/installer.sh
+        env: { BLENDER_DIR: /home/runner/blender }
+      - name: Matériel
+        run: ./studio materiel
+      - name: Produire
+        env:
+          SCENE: ${{ inputs.scene }}
+          PROFIL: ${{ inputs.profil }}
+          ACCORD: ${{ inputs.accord }}
+          BUDGET: ${{ inputs.budget }}
+        run: |
+          case "$SCENE" in */*|*..*) echo "nom de scène invalide"; exit 1;; esac
+          extra=""; [ "$ACCORD" = "true" ] && extra="--accord"
+          code=0; ./studio produire "scenes/$SCENE" --profil "$PROFIL" --budget "$BUDGET" $extra || code=$?
+          cat rapports/dernier_rendu.md >> "$GITHUB_STEP_SUMMARY" || true
+          if [ "$code" = "3" ]; then echo "::warning::Accord requis : estimation au-dessus du budget. Relance en cochant « accord »."; exit 0; fi
+          exit $code
+      - name: Rassembler les résultats
+        if: always()
+        run: |
+          mkdir -p livraison
+          cp sorties/*.mp4 livraison/ 2>/dev/null || true
+          cp -r rapports livraison/ 2>/dev/null || true
+          cp cache/materiel.json cache/sonde.log livraison/ 2>/dev/null || true
+          for p in sorties/projets/*/; do
+            n=$(basename "$p"); mkdir -p "livraison/$n"
+            cp "$p"/rapport.json "$p"/planche.jpg "$p"/rendu.log "livraison/$n/" 2>/dev/null || true
+            cp "$p"/controle/*.png "$p"/controle/*.json "$p"/controle/*.log "livraison/$n/" 2>/dev/null || true
+          done
+          find livraison -name "*.mp4" -size +90M -delete
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rendu-${{ github.run_number }}
+          path: livraison/
+          retention-days: 14
+      - name: Publier sur la branche « resultats » (lisible dans l'app GitHub)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          D=/tmp/pub; mkdir -p $D/run-${{ github.run_number }}; cp -r livraison/. $D/run-${{ github.run_number }}/
+          cd $D && git init -q -b resultats
+          git config user.name "mira-3d-studio"; git config user.email "studio@users.noreply.github.com"
+          git fetch -q "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" resultats 2>/dev/null \
+            && git reset -q --mixed FETCH_HEAD || true
+          git add run-${{ github.run_number }} && git commit -qm "Rendu ${{ github.run_number }} : ${{ inputs.scene }} ${{ inputs.profil }}" || exit 0
+          git push -q "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" resultats

@@ -1,0 +1,25 @@
+{
+  "_doc": "Profils de rendu. « preference » : moteurs essayés dans l'ordre selon ce qui fonctionne VRAIMENT sur la machine (détection). Chaque moteur a ses réglages.",
+  "budget_minutes_sans_accord": 20,
+  "PREVIEW": {
+    "description": "Vérifier une scène vite : 360x640, peu d'échantillons.",
+    "preference": ["eevee", "cycles"],
+    "eevee":  {"largeur": 360, "hauteur": 640, "echantillons": 16, "lancer_rayons": false, "qualite_glow": "LOW"},
+    "cycles": {"largeur": 360, "hauteur": 640, "echantillons": 8, "rebonds": 2, "rebonds_reflets": 1, "rebonds_transparence": 8,
+               "debruitage": true, "seuil_adaptatif": 0.05, "qualite_glow": "LOW"}
+  },
+  "STANDARD": {
+    "description": "Réseaux sociaux : 720x1280, débruité, transparences et reflets propres.",
+    "preference": ["cycles_gpu", "eevee", "cycles"],
+    "eevee":  {"largeur": 720, "hauteur": 1280, "echantillons": 64, "lancer_rayons": true, "qualite_glow": "MEDIUM"},
+    "cycles": {"largeur": 720, "hauteur": 1280, "echantillons": 32, "rebonds": 4, "rebonds_reflets": 2, "rebonds_transparence": 12,
+               "debruitage": true, "seuil_adaptatif": 0.03, "qualite_glow": "MEDIUM"}
+  },
+  "CINEMA": {
+    "description": "Final : 1080x1920, Cycles, beaucoup d'échantillons, flou de mouvement. Coûteux sans GPU : accord requis.",
+    "preference": ["cycles_gpu", "cycles"],
+    "accord_requis_sans_gpu": true,
+    "cycles": {"largeur": 1080, "hauteur": 1920, "echantillons": 128, "rebonds": 8, "rebonds_reflets": 4, "rebonds_transparence": 16,
+               "debruitage": true, "seuil_adaptatif": 0.01, "flou_mouvement": true, "qualite_glow": "HIGH", "clamp_indirect": 10.0}
+  }
+}

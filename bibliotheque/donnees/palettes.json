@@ -1,0 +1,10 @@
+{
+  "_source": "Couleurs officielles relevées sur les planches de référence validées par le propriétaire (octobre 2026). Apollon et Dédale : à compléter depuis leurs planches.",
+  "univers": {"fond_nuit": "#04121a", "nuit_profonde": "#070b1f", "aurore_cyan": "#2ce6ff", "aurore_violet": "#8a3dff", "bougie": "#ffb36b"},
+  "mira": {"principal": "#2ce6ff", "lumiere": "#b8f6ff", "ombre": "#0b5c78", "accent": "#a06bff",
+           "teinte_dominante_deg": [180, 200], "regles": ["tenue opaque", "cadrage épaules par défaut"]},
+  "arthemis": {"principal": "#5a0cff", "lumiere": "#d9b8ff", "ombre": "#1a0547", "yeux": "#efe2ff", "accent": "#ffb36b",
+               "teinte_dominante_deg": [255, 285]},
+  "apollon": {"principal": null, "teinte_dominante_deg": null},
+  "dedale": {"principal": null, "teinte_dominante_deg": null}
+}

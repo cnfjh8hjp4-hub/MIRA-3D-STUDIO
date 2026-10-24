@@ -1,0 +1,77 @@
+#!/usr/bin/env python3
+"""MIRA 3D STUDIO : commande unique.
+
+  ./studio verifier                          versions et dépendances
+  ./studio materiel [--rafraichir]           CPU, RAM, GPU, moteurs Blender qui fonctionnent vraiment ici
+  ./studio inspecter SCENE [--profil P]      contrôle qualité seul (inspection + images tests)
+  ./studio produire SCENE [--profil P] [--accord] [--budget MIN] [--moteur cycles|eevee|cycles_gpu]
+                                             contrôle → estimation → rendu avec reprise → MP4 → rapport
+  ./studio demo [--profil P]                 produire scenes/demo_hologramme.py
+  ./studio polyhaven hdris|textures|models ID [1k|2k|4k]   ressource CC0, téléchargée une seule fois
+  ./studio gpu-externe plan SCENE            ce qui serait fait sur un serveur GPU (rien n'est loué)
+  ./studio test                              tests automatisés + rapport
+
+Profils : PREVIEW, STANDARD, CINEMA, ou auto (défaut : le meilleur compatible avec la machine).
+Rien de long n'est lancé sans --accord si l'estimation dépasse le budget (config/profils.json)."""
+import argparse
+import os
+import subprocess
+import sys
+import time
+
+RACINE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, RACINE)
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("action", choices=["verifier", "materiel", "inspecter", "produire", "demo", "polyhaven", "gpu-externe", "test"])
+    ap.add_argument("args", nargs="*")
+    ap.add_argument("--profil", default=os.environ.get("MIRA3D_PROFIL", "auto"))
+    ap.add_argument("--accord", action="store_true")
+    ap.add_argument("--budget", type=float, default=None)
+    ap.add_argument("--moteur", default=None)
+    ap.add_argument("--rafraichir", action="store_true")
+    a = ap.parse_args()
+
+    if a.action == "verifier":
+        sys.exit(subprocess.run([sys.executable, os.path.join(RACINE, "scripts", "verifier.py")]).returncode)
+    if a.action == "polyhaven":
+        sys.exit(subprocess.run([sys.executable, os.path.join(RACINE, "scripts", "polyhaven.py")] + a.args).returncode)
+    if a.action == "gpu-externe":
+        sys.exit(subprocess.run([sys.executable, os.path.join(RACINE, "scripts", "gpu_externe.py")] + a.args
+                                + (["--accord"] if a.accord else [])).returncode)
+    if a.action == "test":
+        t0 = time.time()
+        p = subprocess.run([sys.executable, "-m", "pytest", "-q", "-rs", os.path.join(RACINE, "tests")], cwd=RACINE,
+                           capture_output=True, text=True)
+        print(p.stdout[-5000:], p.stderr[-2000:])
+        os.makedirs(os.path.join(RACINE, "rapports"), exist_ok=True)
+        with open(os.path.join(RACINE, "rapports", "dernier_tests.md"), "w") as f:
+            f.write(f"# Tests du {time.strftime('%Y-%m-%d %H:%M:%S')}\n\nRésultat : {'réussis' if p.returncode == 0 else 'ÉCHEC'} "
+                    f"en {time.time() - t0:.0f} s\n\n```\n{p.stdout[-6000:]}\n```\n")
+        sys.exit(p.returncode)
+
+    from mira3d import materiel, quality_inspector, render_manager
+    if a.action == "materiel":
+        m = materiel.detecter(rafraichir=a.rafraichir)
+        print(materiel.resume(m)); return
+    scene = os.path.join(RACINE, "scenes", "demo_hologramme.py") if a.action == "demo" else (a.args[0] if a.args else None)
+    if not scene:
+        sys.exit("Indique la scène, ex. ./studio produire scenes/demo_hologramme.py")
+    if a.action == "inspecter":
+        m = materiel.detecter()
+        p = render_manager.resoudre_profil(a.profil, m, a.moteur)
+        d = os.path.join(RACINE, "sorties", "controles", time.strftime("%Y%m%d-%H%M%S"))
+        R = quality_inspector.inspecter(os.path.abspath(scene), p, d, prefixe=p["prefixe"])
+        for x in R.defauts:
+            print(f"[{x['gravite']}] {x['message']}")
+        print("Contrôle VALIDÉ" if not R.bloquants else "Contrôle REFUSÉ", "→", os.path.relpath(d, RACINE))
+        sys.exit(0 if not R.bloquants else 2)
+    r = render_manager.produire(scene, a.profil, accord=a.accord, budget_min=a.budget, moteur=a.moteur)
+    print(f"Statut : {r['statut']} · rapport : rapports/dernier_rendu.md")
+    sys.exit({"termine": 0, "accord_requis": 3, "refuse_controle": 2}.get(r["statut"], 1))
+
+
+if __name__ == "__main__":
+    main()

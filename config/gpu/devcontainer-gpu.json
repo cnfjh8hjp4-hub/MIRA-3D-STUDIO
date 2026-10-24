@@ -1,0 +1,9 @@
+{
+  "_avertissement": "FACULTATIF. Configuration prête pour un futur serveur GPU NVIDIA. Rien n'est loué ni activé : ce fichier n'est utilisé que si tu le choisis explicitement.",
+  "name": "MIRA 3D STUDIO (GPU)",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bookworm",
+  "hostRequirements": { "gpu": true, "cpus": 4, "memory": "16gb" },
+  "runArgs": ["--gpus", "all"],
+  "postCreateCommand": "bash scripts/installer.sh",
+  "containerEnv": { "MIRA3D_PRESET": "gpu", "NVIDIA_DRIVER_CAPABILITIES": "all" }
+}

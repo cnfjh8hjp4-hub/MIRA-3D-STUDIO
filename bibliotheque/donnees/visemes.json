@@ -1,0 +1,13 @@
+{
+  "_doc": "Formes de bouche (visèmes) pour la synchronisation labiale. ouverture 0-1, largeur 0-1, arrondi 0-1. Pour un bec : seule l'ouverture compte.",
+  "repos": {"ouverture": 0.0, "largeur": 0.5, "arrondi": 0.0},
+  "A":     {"ouverture": 1.0, "largeur": 0.6, "arrondi": 0.1},
+  "E":     {"ouverture": 0.55, "largeur": 0.8, "arrondi": 0.0},
+  "I":     {"ouverture": 0.3, "largeur": 0.95, "arrondi": 0.0},
+  "O":     {"ouverture": 0.75, "largeur": 0.35, "arrondi": 0.8},
+  "U":     {"ouverture": 0.35, "largeur": 0.2, "arrondi": 1.0},
+  "MBP":   {"ouverture": 0.0, "largeur": 0.45, "arrondi": 0.1},
+  "FV":    {"ouverture": 0.15, "largeur": 0.6, "arrondi": 0.0},
+  "lettres": {"a": "A", "à": "A", "â": "A", "e": "E", "é": "E", "è": "E", "ê": "E", "i": "I", "y": "I", "o": "O", "ô": "O",
+              "u": "U", "ou": "U", "m": "MBP", "b": "MBP", "p": "MBP", "f": "FV", "v": "FV"}
+}

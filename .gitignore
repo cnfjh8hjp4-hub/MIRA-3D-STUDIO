@@ -1,0 +1,8 @@
+sorties/*
+!sorties/README.md
+__pycache__/
+.pytest_cache/
+*.blend1
+.env
+cache/*
+!cache/README.md

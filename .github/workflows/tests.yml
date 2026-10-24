@@ -1,0 +1,71 @@
+name: Tests et compatibilité Blender
+
+# Tests automatiques à chaque modification du code (et à la demande). Gratuit, CPU, aucun secret.
+on:
+  push:
+    branches: [main]
+    paths: ["bibliotheque/**", "mira3d/**", "scenes/**", "scripts/**", "config/**", "tests/**", "studio", ".github/workflows/tests.yml"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: Tests (Blender de référence)
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - uses: actions/cache@v4
+        with:
+          path: /home/runner/blender
+          key: blender-${{ hashFiles('config/rendu.json') }}
+      - name: Installer
+        run: bash scripts/installer.sh
+        env: { BLENDER_DIR: /home/runner/blender }
+      - name: Matériel et moteurs réellement disponibles
+        run: ./studio materiel --rafraichir
+      - name: Tests automatisés
+        run: ./studio test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tests-${{ github.run_number }}
+          path: |
+            rapports/
+            cache/materiel.json
+            cache/sonde.log
+          retention-days: 14
+
+  compatibilite:
+    name: Compatibilité Blender ${{ matrix.version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ["4.5.3"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Installer Blender ${{ matrix.version }}
+        run: bash scripts/installer.sh
+        env:
+          BLENDER_DIR: /home/runner/blender-${{ matrix.version }}
+          BLENDER_VERSION: "${{ matrix.version }}"
+      - name: Sonde et contrôle qualité de la démo
+        env:
+          BLENDER_BIN: "/home/runner/blender-${{ matrix.version }}/blender"
+        run: |
+          ./studio materiel --rafraichir
+          python3 -m pytest -q tests -k "detection_materiel or controle_qualite"
