@@ -19,8 +19,8 @@ def _pivot(nom, loc, parent=None):
 
 def construire(palette="mira", aretes=True):
     pal = PALETTES[palette]
-    holo = materiaux.hologramme(f"holo_{palette}", pal["principal"], pal["lumiere"], force=2.4, opacite=0.5)
-    fil = materiaux.emission(f"fil_{palette}", pal["lumiere"], 5.0)
+    holo = materiaux.hologramme(f"holo_{palette}", pal["principal"], pal["lumiere"], force=1.3, opacite=0.45)
+    fil = materiaux.emission(f"fil_{palette}", pal["principal"], 2.2)
     yeux = materiaux.emission(f"yeux_{palette}", "#e8ffff", 14.0)
 
     def piece(nom, loc, echelle, parent, avec_aretes=True):

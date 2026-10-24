@@ -19,8 +19,8 @@ def construire(meta):
     D, fps = meta["duree_s"], meta["fps"]
     P = mannequin_holo(palette="mira")
     environnements.socle_holo(PALETTES["mira"]["principal"], hauteur=0.29)
-    geonodes.etincelles("etincelles", centre=(0, 0, 1.2), rayon=1.1, densite=30, taille=0.007,
-                        materiau=materiaux.emission("etincelle_cyan", PALETTES["mira"]["lumiere"], 18))
+    geonodes.etincelles("etincelles", centre=(0, 0, 1.2), rayon=1.1, densite=10, taille=0.006,
+                        materiau=materiaux.emission("etincelle_cyan", PALETTES["mira"]["lumiere"], 9))
     # animation
     mouvements.regard(P["tete"], fps, [(0, (0, 0, 0)), (1.0, (-6, 0, 28)), (2.0, (8, 0, 28)), (2.6, (-4, 0, 28)),
                                        (3.4, (2, 6, -22)), (4.3, (-3, 0, -5)), (D, (0, 0, 0))])
