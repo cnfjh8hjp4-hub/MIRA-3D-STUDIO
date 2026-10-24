@@ -1,0 +1,62 @@
+
+$ /usr/local/bin/blender -b --factory-startup -P /home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/bibliotheque/sonde.py -- --moteur cycles --appareil CPU --sortie /tmp/sonde__561n9l9
+Blender 4.2.3 LTS (hash 0e22e4fcea03 built 2024-10-14 23:31:34)
+Fra:1 Mem:10.35M (Peak 10.35M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Suzanne
+Fra:1 Mem:10.42M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Initializing
+Fra:1 Mem:10.31M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:10.31M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Loading render kernels (may take a few minutes the first time)
+Fra:1 Mem:10.31M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:10.31M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:10.40M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Procedurals
+Fra:1 Mem:10.40M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:10.40M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:10.40M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:10.40M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:10.40M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:10.40M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:10.40M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:10.40M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Particle Systems | Copying Particles to device
+Fra:1 Mem:10.40M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:10.41M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:10.41M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:10.41M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:10.41M (Peak 10.42M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:10.41M (Peak 10.42M) | Time:00:00.00 | Mem:0.03M, Peak:0.03M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:10.41M (Peak 10.42M) | Time:00:00.00 | Mem:0.07M, Peak:0.10M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:10.41M (Peak 10.42M) | Time:00:00.00 | Mem:0.07M, Peak:0.10M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:10.45M (Peak 10.45M) | Time:00:00.00 | Mem:0.07M, Peak:0.10M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:10.45M (Peak 10.45M) | Time:00:00.00 | Mem:0.10M, Peak:0.10M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:10.45M (Peak 10.45M) | Time:00:00.00 | Mem:0.10M, Peak:0.10M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:10.45M (Peak 10.45M) | Time:00:00.00 | Mem:0.10M, Peak:0.10M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:10.45M (Peak 10.45M) | Time:00:00.00 | Mem:0.10M, Peak:0.10M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:10.45M (Peak 10.45M) | Time:00:00.00 | Mem:0.10M, Peak:0.10M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:10.45M (Peak 10.45M) | Time:00:00.00 | Mem:0.19M, Peak:0.19M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:10.45M (Peak 10.45M) | Time:00:00.00 | Mem:0.19M, Peak:0.19M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:10.45M (Peak 10.45M) | Time:00:00.00 | Mem:0.19M, Peak:0.19M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:10.45M (Peak 10.45M) | Time:00:00.00 | Mem:0.19M, Peak:0.19M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:10.45M (Peak 10.45M) | Time:00:00.00 | Mem:0.10M, Peak:0.19M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:10.45M (Peak 10.45M) | Time:00:00.00 | Mem:0.19M, Peak:0.19M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:10.45M (Peak 10.45M) | Time:00:00.00 | Mem:0.19M, Peak:0.19M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:10.45M (Peak 10.45M) | Time:00:00.00 | Mem:0.19M, Peak:0.19M | Scene, ViewLayer | Loading denoising kernels (may take a few minutes the first time)
+Fra:1 Mem:10.45M (Peak 10.45M) | Time:00:00.00 | Mem:0.19M, Peak:0.19M | Scene, ViewLayer | Sample 0/4
+Fra:1 Mem:10.76M (Peak 10.76M) | Time:00:00.00 | Remaining:00:00.00 | Mem:0.49M, Peak:0.49M | Scene, ViewLayer | Sample 1/4
+Fra:1 Mem:10.89M (Peak 10.89M) | Time:00:00.12 | Mem:0.49M, Peak:0.49M | Scene, ViewLayer | Sample 4/4
+Fra:1 Mem:10.89M (Peak 10.89M) | Time:00:00.12 | Mem:0.49M, Peak:0.49M | Scene, ViewLayer | Finished
+Saved: '/tmp/sonde__561n9l9/sonde_cycles_CPU.png'
+Time: 00:00.20 (Saving: 00:00.08)
+
+MIRA3D_SONDE {"moteur": "cycles", "appareil": "CPU", "ok": true, "blender": "4.2.3 LTS", "gpu": [], "secondes": 0.2}
+
+Blender quit
+
+$ /usr/local/bin/blender -b --factory-startup -P /home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/bibliotheque/sonde.py -- --moteur eevee --appareil CPU --sortie /tmp/sonde_pl9sfk4p
+EGL Error (0x3009): EGL_BAD_MATCH: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+Blender 4.2.3 LTS (hash 0e22e4fcea03 built 2024-10-14 23:31:34)
+Fra:1 Mem:40.94M (Peak 40.94M) | Time:00:22.74 | Rendering 1 / 4 samples
+Fra:1 Mem:40.94M (Peak 40.94M) | Time:00:23.97 | Rendering 4 / 4 samples
+Saved: '/tmp/sonde_pl9sfk4p/sonde_eevee_CPU.png'
+Time: 00:24.06 (Saving: 00:00.08)
+
+MIRA3D_SONDE {"moteur": "eevee", "appareil": "CPU", "ok": true, "blender": "4.2.3 LTS", "gpu": [], "secondes": 24.06}
+
+Blender quit

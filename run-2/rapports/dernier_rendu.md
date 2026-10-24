@@ -1,11 +1,19 @@
-# Rapport rendu_demo_hologramme
+# Rendu « demo_hologramme.py » : accord_requis
 
-- **date** : 2026-10-24 22:32:26
-- **scene** : scenes/demo_hologramme.py
-- **preset** : eco
-- **succes** : True
-- **code_blender** : 0
-- **temps_rendu_s** : 1061.3
-- **video** : sorties/20261024-221445_demo_hologramme/demo_hologramme.mp4
-- **video_infos** : {"codec": "h264", "largeur": 540, "hauteur": 960, "images": 120, "duree_s": 5.0}
-- **environnement** : {"blender": {"ok": true, "version": "Blender 4.2.3 LTS", "attendu": "4.2.3", "chemin": "/usr/local/bin/blender"}, "ffmpeg": {"ok": true, "version": "ffmpeg version 8.0.1-3ubuntu2 Copyright (c) 2000-2025 the FFmpeg developers"}, "processeurs": 2}
+- Profil **PREVIEW**, moteur **eevee CPU**
+- Machine : 4 cœurs, 15.6 Go RAM, GPU : aucun ; moteurs qui fonctionnent : cycles, eevee
+- Réglages : 360x640, 16 échantillons
+- Images : 120 au total, 0 reprises du cache, 0 rendues
+- Estimation avant rendu : 28.4 min ; temps de rendu réel : 0.0 min
+- Temps par image : None
+- Durée totale (contrôle compris) : 0.9 min
+
+## Contrôle qualité
+Verdict : **validé**
+- aucun défaut détecté
+- test_0001.png : luminance 83.43, contraste 75.68, ecart_fond 0.0, palette_mira 1.0
+- test_0060.png : luminance 93.52, contraste 77.25, ecart_fond 0.0, palette_mira 1.0
+- test_0120.png : luminance 105.61, contraste 78.98, ecart_fond 1.0, palette_mira 1.0
+- Référence mira : similarité des teintes 0.627 (couleurs uniquement (la forme n'est pas comparée))
+
+Accord requis : estimation 28.4 min > budget 20.0 min. Relance avec `--accord` si tu es d'accord.

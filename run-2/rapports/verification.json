@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-24 22:13:53",
+  "date": "2026-10-24 23:28:05",
   "python": {
     "ok": true,
     "version": "3.11.17"
@@ -18,8 +18,8 @@
     "ok": true,
     "version": "8.3.3"
   },
-  "processeurs": 2,
-  "disque_libre_go": 14.0,
+  "processeurs": 4,
+  "disque_libre_go": 92.1,
   "disque_ok": true,
   "tout_ok": true
 }
