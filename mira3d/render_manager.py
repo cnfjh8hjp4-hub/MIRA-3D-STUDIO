@@ -48,7 +48,8 @@ def resoudre_profil(nom, m, moteur_force=None):
 def _empreinte(scene, profil):
     """Change si la scène, la bibliothèque ou le profil change : les images d'une ancienne version ne sont jamais réutilisées."""
     h = hashlib.sha1(json.dumps({k: v for k, v in profil.items() if k != "prefixe"}, sort_keys=True).encode())
-    for f in [scene] + sorted(glob.glob(os.path.join(RACINE, "bibliotheque", "**", "*.*"), recursive=True)):
+    for f in [scene] + sorted(glob.glob(os.path.join(RACINE, "bibliotheque", "**", "*.*"), recursive=True)) \
+            + sorted(glob.glob(os.path.join(RACINE, "assets", "selection_*.json"))):
         if os.path.isfile(f) and "__pycache__" not in f:
             h.update(open(f, "rb").read())
     return h.hexdigest()[:10]

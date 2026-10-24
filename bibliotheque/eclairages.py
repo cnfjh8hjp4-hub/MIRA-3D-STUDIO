@@ -6,8 +6,9 @@ import bpy
 from .palettes import hex_vers_lineaire
 
 
-def monde(couleur_hex="#04121a", force=1.0, hdri=None, rotation_deg=0):
-    """Fond uni (couleur exacte) ou HDRI Poly Haven déjà téléchargée (chemin local)."""
+def monde(couleur_hex="#04121a", force=1.0, hdri=None, rotation_deg=0, fond_visible=None):
+    """Fond uni (couleur exacte) ou HDRI Poly Haven déjà téléchargée (chemin local).
+    fond_visible : avec une HDRI, la caméra voit cette couleur unie tandis que l'HDRI éclaire et se reflète."""
     w = bpy.data.worlds.new("monde"); w.use_nodes = True
     N, L = w.node_tree.nodes, w.node_tree.links
     bg = N["Background"]
@@ -20,6 +21,11 @@ def monde(couleur_hex="#04121a", force=1.0, hdri=None, rotation_deg=0):
     else:
         bg.inputs["Color"].default_value = hex_vers_lineaire(couleur_hex)
     bg.inputs["Strength"].default_value = force
+    if hdri and fond_visible:
+        uni = N.new("ShaderNodeBackground"); uni.inputs["Color"].default_value = hex_vers_lineaire(fond_visible)
+        lp = N.new("ShaderNodeLightPath"); mix = N.new("ShaderNodeMixShader"); out = N["World Output"]
+        L.new(lp.outputs["Is Camera Ray"], mix.inputs["Fac"]); L.new(bg.outputs[0], mix.inputs[1]); L.new(uni.outputs[0], mix.inputs[2])
+        L.new(mix.outputs[0], out.inputs["Surface"])
     bpy.context.scene.world = w
     return w
 

@@ -121,3 +121,21 @@ def test_controle_qualite_refuse_scene_defectueuse(tmp_path):
     R = qi.inspecter(os.path.join(RACINE, "scenes", "tests", "scene_vide.py"), p, str(tmp_path))
     codes = {d["code"] for d in R.bloquants}
     assert codes & {"cadrage_vide", "image_noire", "image_uniforme"}, R.dict()
+
+
+def test_asset_manager_catalogue_recherche_licences(tmp_path, monkeypatch):
+    from mira3d import assets as A
+    monkeypatch.setattr(A, "CATALOGUE", str(tmp_path / "catalogue.json")); monkeypatch.setattr(A, "DOSSIER", str(tmp_path))
+    cat = A.charger()
+    A.ajouter(cat, {"id": "kenney/furniture-kit/desk", "source": "kenney", "type": "modele", "titre": "desk", "tags": ["desk"],
+                    "style": "low-poly", "licence": A.licence("kenney", True, "test")})
+    A.ajouter(cat, {"id": "cmu/02_01", "source": "cmu_mocap", "type": "mouvement", "titre": "marche", "mouvement": "marche",
+                    "tags": ["marche"], "licence": A.licence("cmu_mocap", True, "test")})
+    A.sauver(cat)
+    assert [x["id"] for x in A.chercher(type_="mouvement")] == ["cmu/02_01"]
+    assert [x["id"] for x in A.chercher(texte="desk")] == ["kenney/furniture-kit/desk"]
+    assert A.chercher(mouvement="marche")[0]["statut"] == "catalogue"
+    import pytest as _p
+    cat["assets"]["q"] = {"id": "q", "source": "quaternius", "type": "personnage", "statut": "catalogue", "licence": A.licence("quaternius")}
+    with _p.raises(RuntimeError):
+        A.telecharger(cat, "q")  # source manuelle : jamais de téléchargement automatique

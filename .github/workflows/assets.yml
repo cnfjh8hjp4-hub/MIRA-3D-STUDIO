@@ -1,0 +1,74 @@
+name: Bibliothèque de ressources (Asset Manager)
+
+# Catalogue, téléchargements ciblés (jamais de bibliothèque entière), tests d'import Blender, aperçus, rendu du bureau.
+# Les résultats (catalogue mis à jour, licences, aperçus, vidéos, documentation) arrivent sur la branche « resultats ».
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "mission1, ou une commande de mira3d.assets (ex. « distant polyhaven hdris night »)"
+        required: true
+        default: "mission1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: assets
+  cancel-in-progress: false
+
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - uses: actions/cache@v4
+        with:
+          path: /home/runner/blender
+          key: blender-${{ hashFiles('config/rendu.json') }}
+      - name: Cache des ressources téléchargées (évite de retélécharger)
+        uses: actions/cache@v4
+        with:
+          path: |
+            cache/assets
+            sorties/projets
+          key: assets-${{ github.run_id }}
+          restore-keys: assets-
+      - name: Installer
+        run: bash scripts/installer.sh
+        env: { BLENDER_DIR: /home/runner/blender }
+      - name: Exécuter
+        env: { ACTION: "${{ inputs.action }}" }
+        run: |
+          case "$ACTION" in *";"*|*"&"*|*"|"*|*'$'*|*'`'*) echo "commande refusée"; exit 1;; esac
+          ./studio materiel
+          python3 -m mira3d.assets $ACTION
+      - name: Rassembler
+        if: always()
+        run: |
+          mkdir -p livraison
+          cp -r assets docs livraison/ 2>/dev/null || true
+          mkdir -p livraison/medias && cp scenes/medias/*.json livraison/medias/ 2>/dev/null || true
+          cp sorties/*.mp4 livraison/ 2>/dev/null || true
+          cp -r rapports livraison/ 2>/dev/null || true
+          for p in sorties/projets/*/; do n=$(basename "$p"); mkdir -p "livraison/projets/$n"
+            cp "$p"/rapport.json "$p"/planche.jpg "$p"/rendu.log "$p"/controle/*.png "$p"/controle/*.json "$p"/controle/*.log "livraison/projets/$n/" 2>/dev/null || true; done
+          cp -r cache/assets/tests livraison/tests_import 2>/dev/null || true
+          find livraison -name "*.mp4" -size +90M -delete
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: "assets-${{ github.run_number }}", path: livraison/, retention-days: 14 }
+      - name: Publier sur la branche « resultats »
+        if: always()
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          D=/tmp/pub; mkdir -p $D/assets-${{ github.run_id }}; cp -r livraison/. $D/assets-${{ github.run_id }}/
+          cd $D && git init -q -b resultats
+          git config user.name "mira-3d-studio"; git config user.email "studio@users.noreply.github.com"
+          U="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          git fetch -q "$U" resultats 2>/dev/null && git reset -q --mixed FETCH_HEAD || true
+          git add assets-${{ github.run_id }} && git commit -qm "Bibliothèque : ${{ inputs.action }}" || exit 0
+          for i in 1 2 3 4 5; do git push -q "$U" resultats && break; sleep $((i*5)); git fetch -q "$U" resultats && git rebase -q FETCH_HEAD || true; done
