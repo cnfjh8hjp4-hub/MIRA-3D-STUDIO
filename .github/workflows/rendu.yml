@@ -28,7 +28,7 @@ permissions:
   contents: write   # uniquement pour publier les résultats sur la branche « resultats »
 
 concurrency:
-  group: rendu
+  group: rendu-${{ inputs.scene }}-${{ inputs.profil }}
   cancel-in-progress: false
 
 jobs:
@@ -99,4 +99,8 @@ jobs:
           git fetch -q "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" resultats 2>/dev/null \
             && git reset -q --mixed FETCH_HEAD || true
           git add run-${{ github.run_id }} && git commit -qm "Rendu ${{ github.run_number }} : ${{ inputs.scene }} ${{ inputs.profil }}" || exit 0
-          git push -q "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" resultats
+          U="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          for i in 1 2 3 4 5; do  # plusieurs rendus en parallèle : on se recale sur la branche avant de pousser
+            git push -q "$U" resultats && break
+            sleep $((i * 5)); git fetch -q "$U" resultats && git rebase -q FETCH_HEAD || true
+          done
