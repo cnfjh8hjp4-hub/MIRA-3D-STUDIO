@@ -35,7 +35,7 @@ def emission(nom, couleur_hex, force=5.0):
     return m
 
 
-def hologramme(nom, couleur_hex, bord_hex=None, force=2.5, opacite=0.55, balayage=True, constellations=False):
+def hologramme(nom, couleur_hex, bord_hex=None, force=2.5, opacite=0.55, balayage=True, constellations=False, plumes=0.0):
     """Hologramme : bords lumineux (Fresnel), centre transparent, lignes de balayage qui défilent,
     réseau de constellations facultatif."""
     m, neuf = _nouveau(nom)
@@ -69,6 +69,17 @@ def hologramme(nom, couleur_hex, bord_hex=None, force=2.5, opacite=0.55, balayag
         L.new(vo.outputs["Distance"], ligne.inputs["Value"])
         add = N.new("ShaderNodeMath"); add.operation = "MULTIPLY_ADD"; add.inputs[1].default_value = force * 1.5
         L.new(ligne.outputs["Result"], add.inputs[0]); L.new(dernier, add.inputs[2]); dernier = add.outputs[0]
+    if plumes:
+        # écailles de plumes : Voronoi étiré vers le bas, bords des cellules plus lumineux
+        mp = N.new("ShaderNodeMapping"); mp.inputs["Scale"].default_value = (1.0, 1.0, 0.45)
+        L.new(coord.outputs["Object"], mp.inputs["Vector"])
+        vf = N.new("ShaderNodeTexVoronoi"); vf.feature = "DISTANCE_TO_EDGE"; vf.inputs["Scale"].default_value = 14 * plumes
+        L.new(mp.outputs[0], vf.inputs["Vector"])
+        bord = N.new("ShaderNodeMapRange"); bord.inputs["From Max"].default_value = 0.08
+        bord.inputs["To Min"].default_value = 1.0; bord.inputs["To Max"].default_value = 0.0; bord.clamp = True
+        L.new(vf.outputs["Distance"], bord.inputs["Value"])
+        add2 = N.new("ShaderNodeMath"); add2.operation = "MULTIPLY_ADD"; add2.inputs[1].default_value = force * 1.1
+        L.new(bord.outputs["Result"], add2.inputs[0]); L.new(dernier, add2.inputs[2]); dernier = add2.outputs[0]
     mixc = N.new("ShaderNodeMix"); mixc.data_type = "RGBA"
     mixc.inputs["A"].default_value = hex_vers_lineaire(couleur_hex)
     mixc.inputs["B"].default_value = hex_vers_lineaire(bord_hex or couleur_hex)
