@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-24 23:41:56",
+  "python": {
+    "ok": true,
+    "version": "3.11.17"
+  },
+  "blender": {
+    "ok": true,
+    "version": "Blender 4.2.3 LTS",
+    "attendu": "4.2.3",
+    "chemin": "/usr/local/bin/blender"
+  },
+  "ffmpeg": {
+    "ok": true,
+    "version": "ffmpeg version 8.0.1-3ubuntu2 Copyright (c) 2000-2025 the FFmpeg developers"
+  },
+  "pytest": {
+    "ok": true,
+    "version": "8.3.3"
+  },
+  "processeurs": 4,
+  "disque_libre_go": 92.1,
+  "disque_ok": true,
+  "tout_ok": true
+}
