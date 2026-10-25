@@ -1,0 +1,54 @@
+
+$ /usr/local/bin/blender -b --factory-startup -P /home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/scenes/tests/retarget_cmu.py -- --mode inspection --profil-json /home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/sorties/projets/retarget_cmu_PREVIEW_580d106f76/controle/profil.json --sortie /home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/sorties/projets/retarget_cmu_PREVIEW_580d106f76/controle
+Blender 4.2.3 LTS (hash 0e22e4fcea03 built 2024-10-14 23:31:34)
+Traceback (most recent call last):
+  File "/home/runner/blender/4.2/scripts/addons_core/io_anim_bvh/__init__.py", line 132, in execute
+    return import_bvh.load(context, report=self.report, **keywords)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/blender/4.2/scripts/addons_core/io_anim_bvh/import_bvh.py", line 667, in load
+    bvh_nodes, bvh_frame_time, bvh_frame_count = read_bvh(
+                                                 ^^^^^^^^^
+  File "/home/runner/blender/4.2/scripts/addons_core/io_anim_bvh/import_bvh.py", line 101, in read_bvh
+    file = open(file_path, 'r')
+           ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/cache/assets/cmu/02_01.bvh'
+Traceback (most recent call last):
+  File "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/scenes/tests/retarget_cmu.py", line 36, in <module>
+    execution.lancer(construire, META)
+  File "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/bibliotheque/execution.py", line 179, in lancer
+    construire(meta)
+  File "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/scenes/tests/retarget_cmu.py", line 20, in construire
+    objs = import_assets.importer(os.path.join(RACINE, SEL["fichier"]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/bibliotheque/import_assets.py", line 23, in importer
+    bpy.ops.import_anim.bvh(filepath=chemin, use_fps_scale=True, update_scene_fps=False, update_scene_duration=False)
+  File "/home/runner/blender/4.2/scripts/modules/bpy/ops.py", line 109, in __call__
+    ret = _op_call(self.idname_py(), kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Error: Python: Traceback (most recent call last):
+  File "/home/runner/blender/4.2/scripts/addons_core/io_anim_bvh/__init__.py", line 132, in execute
+    return import_bvh.load(context, report=self.report, **keywords)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/blender/4.2/scripts/addons_core/io_anim_bvh/import_bvh.py", line 667, in load
+    bvh_nodes, bvh_frame_time, bvh_frame_count = read_bvh(
+                                                 ^^^^^^^^^
+  File "/home/runner/blender/4.2/scripts/addons_core/io_anim_bvh/import_bvh.py", line 101, in read_bvh
+    file = open(file_path, 'r')
+           ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/cache/assets/cmu/02_01.bvh'
+Location: /home/runner/blender/4.2/scripts/modules/bpy/ops.py:109
+
+	parsing bvh '/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/cache/assets/cmu/02_01.bvh'...Error: Python: Traceback (most recent call last):
+  File "/home/runner/blender/4.2/scripts/addons_core/io_anim_bvh/__init__.py", line 132, in execute
+    return import_bvh.load(context, report=self.report, **keywords)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/blender/4.2/scripts/addons_core/io_anim_bvh/import_bvh.py", line 667, in load
+    bvh_nodes, bvh_frame_time, bvh_frame_count = read_bvh(
+                                                 ^^^^^^^^^
+  File "/home/runner/blender/4.2/scripts/addons_core/io_anim_bvh/import_bvh.py", line 101, in read_bvh
+    file = open(file_path, 'r')
+           ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/cache/assets/cmu/02_01.bvh'
+Location: /home/runner/blender/4.2/scripts/modules/bpy/ops.py:109
+
+Blender quit
