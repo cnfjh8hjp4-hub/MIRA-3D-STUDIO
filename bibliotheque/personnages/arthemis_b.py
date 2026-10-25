@@ -46,23 +46,23 @@ def construire(hauteur=1.45):
     img = next(n.image for n in corps.data.materials[0].node_tree.nodes if n.type == "TEX_IMAGE")
     co = np.array([v.co[:] for v in corps.data.vertices]); lum = _lum_par_sommet(corps, img)
     zt = co[:, 2].max()
-    tete = (co[:, 2] > zt * 0.62) & (co[:, 2] < zt * 0.88)
+    tete = (co[:, 2] > zt * 0.63) & (co[:, 2] < zt * 0.75)  # sous les sourcils (zone la plus claire, à exclure)
     avant = co[:, 1] < np.percentile(co[tete, 1], 30)
     cand = np.where(tete & avant & (np.abs(co[:, 0]) > 0.03))[0]
-    seuil = np.percentile(lum[cand], 92); clairs = cand[lum[cand] >= seuil]
+    seuil = np.percentile(lum[cand], 85); clairs = cand[lum[cand] >= seuil]
     yeux = {}
     for cote, s in (("g", 1), ("d", -1)):
         c = clairs[np.sign(co[clairs, 0]) == s]
         if len(c) < 3:
             c = cand[np.sign(co[cand, 0]) == s]
         yeux[cote] = co[c].mean(axis=0)
-    ecart = abs(yeux["g"][0] - yeux["d"][0]); r = max(0.035, min(0.08, ecart * 0.33))
+    ecart = abs(yeux["g"][0] - yeux["d"][0]); r = max(0.03, min(0.065, ecart * 0.24))
     zy = (yeux["g"][2] + yeux["d"][2]) / 2
     m_bec = (np.abs(co[:, 0]) < ecart * 0.25) & (co[:, 2] < zy - r * 0.3) & (co[:, 2] > zy - r * 3)
     idx = np.where(m_bec)[0]; pointe = co[idx[np.argmin(co[idx, 1])]] if len(idx) else np.array([0, yeux["g"][1] - r, zy - 2 * r])
     print("yeux", yeux, "rayon", r, "bec", pointe, flush=True)
-    iris_m = materiaux.emission("arthemis_b_iris", "#7a45ff", 2.6); clair_m = materiaux.emission("arthemis_b_iris_clair", "#c8a8ff", 2.2)
-    pup_m = materiaux.emission("arthemis_b_pupille", "#0b0220", 0.2); ref_m = materiaux.emission("arthemis_b_reflet", "#ffffff", 16)
+    iris_m = materiaux.emission("arthemis_b_iris", "#5a2cff", 1.2); clair_m = materiaux.emission("arthemis_b_iris_clair", "#b896ff", 1.1)
+    pup_m = materiaux.emission("arthemis_b_pupille", "#0b0220", 0.2); ref_m = materiaux.emission("arthemis_b_reflet", "#ffffff", 8)
     pau_m = materiaux.hologramme("arthemis_b_paupiere", PAL["principal"], PAL["lumiere"], force=0.9, opacite=0.95, balayage=False)
     bec_m = materiaux.emission("arthemis_b_bec", "#b58cff", 1.4)
     for cote, s in (("g", 1), ("d", -1)):

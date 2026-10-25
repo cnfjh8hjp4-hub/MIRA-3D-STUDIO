@@ -34,8 +34,8 @@ def construire(meta):
     environnements.bokeh(30, couleurs=("#ffb36b", "#8a3dff", "#5a0cff", "#2ce6ff"), profondeur=(4.5, 8.5))
     geonodes.etincelles("etincelles", centre=(0, 0, 0.9), rayon=0.9, densite=6, taille=0.005,
                         materiau=materiaux.emission("etincelle_violette", PALETTES["arthemis"]["lumiere"], 10))
-    cam, cible = cameras.creer(focale=50, cible_loc=(0, 0, 0.95), dof_fstop=2.2)
-    cameras.travelling_avant(cam, D, fps, de=3.6, a=2.5, hauteur=1.1, x=(-0.2, 0.1))
+    cam, cible = cameras.creer(focale=50, cible_loc=(0, 0, 0.92), dof_fstop=2.4)
+    cameras.travelling_avant(cam, D, fps, de=4.0, a=3.1, hauteur=1.05, x=(-0.15, 0.05))
     eclairages.monde(PALETTES["univers"]["nuit_profonde"], 1.0)
 
 
