@@ -1,0 +1,3 @@
+jeton Hugging Face : présent
+Loaded as API: https://zerogpu-aoti-wan2-2-fp8da-aoti-faster.hf.space
+vidéo : livraison/arthemis_parle_2.mp4 (61 s)
