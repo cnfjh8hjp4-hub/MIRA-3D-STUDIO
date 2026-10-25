@@ -55,17 +55,13 @@ jobs:
             cache/polyhaven
           key: production-${{ github.run_id }}
           restore-keys: production-
-      - name: Ressources de la bibliothèque (lecture du cache de l'Asset Manager)
-        uses: actions/cache/restore@v4
-        with:
-          path: cache/assets
-          key: assets-aucune
-          restore-keys: assets-
       - name: Installer
         run: bash scripts/installer.sh
         env: { BLENDER_DIR: /home/runner/blender }
-      - name: Matériel
-        run: ./studio materiel
+      - name: Matériel et ressources de la bibliothèque (téléchargées à la demande)
+        run: |
+          ./studio materiel
+          python3 -m mira3d.assets assurer
       - name: Produire
         env:
           SCENE: ${{ inputs.scene }}

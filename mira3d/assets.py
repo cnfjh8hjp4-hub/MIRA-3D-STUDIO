@@ -316,6 +316,16 @@ def main():
         sauver(cat); ecrire_licences(cat)
     elif a.action == "licences":
         ecrire_licences(cat)
+    elif a.action == "assurer":
+        # remet en cache, à la demande, les ressources déjà retenues (importées ou validées) dont les fichiers manquent
+        manque = [i for i, x in cat["assets"].items() if x["statut"] in ("telecharge", "importe", "valide")
+                  and x.get("fichiers") and not all(os.path.exists(os.path.join(RACINE, f)) for f in x["fichiers"])]
+        for i in manque:
+            try:
+                telecharger(cat, i)
+            except Exception as e:
+                log("échec", i, e)
+        log(f"{len(manque)} ressource(s) remise(s) en cache")
     elif a.action == "mission1":
         from .mission_assets import mission1
         mission1()
