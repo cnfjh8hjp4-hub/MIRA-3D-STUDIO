@@ -16,7 +16,7 @@ MODELE = os.path.join(RACINE, "assets", "personnages", "mira_trellis.glb")
 PAL = PALETTES["mira"]
 
 
-def _materiau(img, hauteur, pal=PAL, plancher="#1a8fb0", nom="mira_holo"):
+def _materiau(img, hauteur, pal=PAL, plancher="#1a8fb0", nom="mira_holo", buste_uniforme=True):
     m = bpy.data.materials.new(nom); m.use_nodes = True; N, L = m.node_tree.nodes, m.node_tree.links; N.clear()
     out = N.new("ShaderNodeOutputMaterial"); tc = N.new("ShaderNodeTexCoord")
     tex = N.new("ShaderNodeTexImage"); tex.image = img; L.new(tc.outputs["UV"], tex.inputs["Vector"])
@@ -31,6 +31,8 @@ def _materiau(img, hauteur, pal=PAL, plancher="#1a8fb0", nom="mira_holo"):
     bande.inputs["From Min"].default_value = hauteur * 0.80; bande.inputs["From Max"].default_value = hauteur * 0.84
     bande.inputs["To Min"].default_value = 1.0; bande.inputs["To Max"].default_value = 0.0; L.new(sepz.outputs["Z"], bande.inputs["Value"])
     uni = N.new("ShaderNodeMix"); uni.data_type = "FLOAT"; uni.inputs["B"].default_value = 0.55
+    if not buste_uniforme:
+        bande.inputs["To Min"].default_value = 0.0
     L.new(bande.outputs["Result"], uni.inputs["Factor"]); L.new(bw.outputs["Val"], uni.inputs["A"])
     L.new(uni.outputs["Result"], ramp.inputs["Fac"])
     lw = N.new("ShaderNodeLayerWeight"); lw.inputs["Blend"].default_value = 0.4
@@ -63,7 +65,7 @@ def _materiau(img, hauteur, pal=PAL, plancher="#1a8fb0", nom="mira_holo"):
     return m, seuil
 
 
-def construire(hauteur=1.68, modele=MODELE, palette="mira", plancher="#1a8fb0", ratio_cou=0.835, nom="mira"):
+def construire(hauteur=1.68, modele=MODELE, palette="mira", plancher="#1a8fb0", ratio_cou=0.835, nom="mira", buste_uniforme=None):
     pal = PALETTES[palette]
     objs = import_assets.importer(modele)
     meshes = [o for o in objs if o.type == "MESH"]
@@ -84,7 +86,7 @@ def construire(hauteur=1.68, modele=MODELE, palette="mira", plancher="#1a8fb0", 
         v.co = c
     corps.data.update(); bpy.ops.object.shade_smooth()
     # orientation : le visage doit regarder -Y (vers la caméra)
-    m, seuil = _materiau(img, hauteur, pal, plancher, f"{nom}_holo")
+    m, seuil = _materiau(img, hauteur, pal, plancher, f"{nom}_holo", palette == "mira" if buste_uniforme is None else buste_uniforme)
     corps.data.materials.clear(); corps.data.materials.append(m)
     # squelette : buste et tête, poids lissés selon la hauteur
     cou = hauteur * ratio_cou
