@@ -9,6 +9,9 @@ import time
 from gradio_client import Client, handle_file
 
 img, sortie = sys.argv[1], sys.argv[2]
+# plusieurs vues : IMAGE peut être « face.png,profil.png,dos.png » (vues du turnaround des planches)
+vues = img.split(",")
+img = vues[0]
 graine = int(sys.argv[3]) if len(sys.argv) > 3 else 0
 tok = os.environ.get("HF_TOKEN") or None
 t = time.time()
@@ -22,8 +25,8 @@ for space in ("trellis-community/TRELLIS", "JeffreyXiang/TRELLIS"):
     except Exception:
         pass
     pre = c.predict(handle_file(img), api_name="/preprocess_image")
-    res = c.predict(image=handle_file(pre), multiimages=[], seed=graine, ss_guidance_strength=7.5, ss_sampling_steps=12,
-                    slat_guidance_strength=3, slat_sampling_steps=12, multiimage_algo="stochastic",
+    res = c.predict(image=handle_file(pre), multiimages=[handle_file(v) for v in vues[1:]], seed=graine, ss_guidance_strength=7.5, ss_sampling_steps=12,
+                    slat_guidance_strength=3, slat_sampling_steps=12, multiimage_algo="multidiffusion" if len(vues) > 1 else "stochastic",
                     mesh_simplify=0.92, texture_size=1024, api_name="/generate_and_extract_glb")
     pile = [res]
     while pile:

@@ -30,10 +30,10 @@ jobs:
           NOM: ${{ inputs.nom }}
           GRAINE: ${{ inputs.graine }}
         run: |
-          case "$IMAGE$NOM$GRAINE" in */*|*..*|*" "*) echo "paramètre invalide"; exit 1;; esac
+          case "$NOM$GRAINE" in */*|*..*|*" "*) echo "paramètre invalide"; exit 1;; esac
           pip install -q gradio_client
           mkdir -p livraison
-          python3 scripts/generer_3d.py "assets/personnages/sources/$IMAGE" "livraison/$NOM.glb" "$GRAINE"
+          python3 scripts/generer_3d.py "$(echo "$IMAGE" | sed "s#\([^,]*\)#assets/personnages/sources/\1#g")" "livraison/$NOM.glb" "$GRAINE"
       - name: Publier sur la branche « resultats »
         if: always()
         env: { GH_TOKEN: "${{ github.token }}" }
