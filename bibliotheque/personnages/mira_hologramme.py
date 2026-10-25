@@ -22,7 +22,7 @@ def _materiau(img, hauteur):
     tex = N.new("ShaderNodeTexImage"); tex.image = img; L.new(tc.outputs["UV"], tex.inputs["Vector"])
     bw = N.new("ShaderNodeRGBToBW"); L.new(tex.outputs["Color"], bw.inputs["Color"])
     ramp = N.new("ShaderNodeValToRGB"); cr = ramp.color_ramp
-    cr.elements[0].position = 0.02; cr.elements[0].color = hex_vers_lineaire(PAL["ombre"])
+    cr.elements[0].position = 0.0; cr.elements[0].color = hex_vers_lineaire("#1a8fb0")  # pas de zones sombres « trouées »
     cr.elements[1].position = 0.9; cr.elements[1].color = hex_vers_lineaire(PAL["lumiere"])
     e = cr.elements.new(0.4); e.color = hex_vers_lineaire(PAL["principal"])
     L.new(bw.outputs["Val"], ramp.inputs["Fac"])
@@ -35,7 +35,7 @@ def _materiau(img, hauteur):
     scan = N.new("ShaderNodeMapRange"); scan.inputs["From Min"].default_value = 0.6; scan.inputs["To Min"].default_value = 0.85
     scan.inputs["To Max"].default_value = 1.2; L.new(wave.outputs["Fac"], scan.inputs["Value"])
     force = N.new("ShaderNodeMath"); force.operation = "MULTIPLY_ADD"; force.inputs[1].default_value = 1.6
-    L.new(bw.outputs["Val"], force.inputs[0]); force.inputs[2].default_value = 0.35
+    L.new(bw.outputs["Val"], force.inputs[0]); force.inputs[2].default_value = 0.5
     f2 = N.new("ShaderNodeMath"); f2.operation = "MULTIPLY_ADD"; f2.inputs[1].default_value = 2.2
     L.new(rim.outputs[0], f2.inputs[0]); L.new(force.outputs[0], f2.inputs[2])
     f3 = N.new("ShaderNodeMath"); f3.operation = "MULTIPLY"; L.new(f2.outputs[0], f3.inputs[0]); L.new(scan.outputs["Result"], f3.inputs[1])
@@ -50,7 +50,7 @@ def _materiau(img, hauteur):
     L.new(rim.outputs[0], mixc.inputs["Factor"]); L.new(ramp.outputs["Color"], mixc.inputs["A"])
     em = N.new("ShaderNodeEmission"); L.new(mixc.outputs["Result"], em.inputs["Color"]); L.new(f4.outputs[0], em.inputs["Strength"])
     tr = N.new("ShaderNodeBsdfTransparent")
-    alpha = N.new("ShaderNodeMath"); alpha.operation = "MULTIPLY"; alpha.inputs[1].default_value = 0.9; L.new(visible.outputs[0], alpha.inputs[0])
+    alpha = N.new("ShaderNodeMath"); alpha.operation = "MULTIPLY"; alpha.inputs[1].default_value = 0.97; L.new(visible.outputs[0], alpha.inputs[0])
     mix = N.new("ShaderNodeMixShader"); L.new(alpha.outputs[0], mix.inputs["Fac"]); L.new(tr.outputs[0], mix.inputs[1]); L.new(em.outputs[0], mix.inputs[2])
     L.new(mix.outputs[0], out.inputs["Surface"])
     return m, seuil
