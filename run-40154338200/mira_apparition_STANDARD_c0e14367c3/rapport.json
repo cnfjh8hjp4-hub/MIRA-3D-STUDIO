@@ -1,0 +1,213 @@
+{
+  "scene": "scenes/mira_apparition.py",
+  "profil": "STANDARD",
+  "moteur": "cycles",
+  "appareil": "CPU",
+  "via_ecran_virtuel": false,
+  "reglages": {
+    "largeur": 720,
+    "hauteur": 1280,
+    "echantillons": 32,
+    "rebonds": 4,
+    "rebonds_reflets": 2,
+    "rebonds_transparence": 12,
+    "debruitage": true,
+    "seuil_adaptatif": 0.03,
+    "qualite_glow": "MEDIUM",
+    "moteur": "cycles",
+    "profil": "STANDARD",
+    "appareil": "CPU",
+    "accord_requis": false
+  },
+  "materiel": {
+    "cpu": {
+      "coeurs": 4,
+      "modele": "AMD EPYC 7763 64-Core Processor"
+    },
+    "ram_go": 15.6,
+    "gpu": [],
+    "blender": {
+      "chemin": "/usr/local/bin/blender",
+      "version": "Blender 4.2.3 LTS"
+    },
+    "moteurs_ok": [
+      "cycles",
+      "eevee"
+    ]
+  },
+  "projet": "sorties/projets/mira_apparition_STANDARD_c0e14367c3",
+  "debut": "2026-10-25 02:26:01",
+  "etapes": [
+    {
+      "bloc": "1-24",
+      "code": 0,
+      "secondes": 852.7,
+      "essai": 1
+    },
+    {
+      "bloc": "25-48",
+      "code": 0,
+      "secondes": 863.26,
+      "essai": 1
+    },
+    {
+      "bloc": "49-72",
+      "code": 0,
+      "secondes": 818.6,
+      "essai": 1
+    },
+    {
+      "bloc": "73-96",
+      "code": 0,
+      "secondes": 783.42,
+      "essai": 1
+    },
+    {
+      "bloc": "97-120",
+      "code": 0,
+      "secondes": 757.56,
+      "essai": 1
+    },
+    {
+      "bloc": "121-144",
+      "code": 0,
+      "secondes": 736.01,
+      "essai": 1
+    }
+  ],
+  "controle": {
+    "valide": true,
+    "defauts": [],
+    "inspection": {
+      "blender": "4.2.3 LTS",
+      "moteurs_disponibles": [
+        "BLENDER_EEVEE_NEXT"
+      ],
+      "meta": {
+        "nom": "mira_apparition",
+        "duree_s": 6,
+        "fps": 24,
+        "personnages": [
+          "mira"
+        ],
+        "audio": null,
+        "fond": "#04121a",
+        "format": "9:16"
+      },
+      "camera": "camera",
+      "resolution": [
+        720,
+        1280
+      ],
+      "fps": 24,
+      "timeline": [
+        1,
+        144
+      ],
+      "duree_s": 6.0,
+      "objets": {
+        "ARMATURE": 1,
+        "MESH": 32,
+        "EMPTY": 2,
+        "CAMERA": 1
+      },
+      "materiaux": 8,
+      "geometry_nodes": 4,
+      "ressources_manquantes": [],
+      "audio": [],
+      "cadrage": [
+        {
+          "image": 1,
+          "objets_dans_le_champ": 5,
+          "objets": 5
+        },
+        {
+          "image": 72,
+          "objets_dans_le_champ": 5,
+          "objets": 5
+        },
+        {
+          "image": 144,
+          "objets_dans_le_champ": 2,
+          "objets": 5
+        }
+      ],
+      "moteur": "CYCLES"
+    },
+    "images_tests": [
+      "test_0001.png",
+      "test_0072.png",
+      "test_0144.png"
+    ],
+    "analyses": [
+      {
+        "image": "test_0001.png",
+        "luminance_moyenne": 36.15,
+        "contraste": 45.65,
+        "part_noir": 0.0,
+        "part_blanc_brule": 0.002,
+        "ecart_fond": 0.0,
+        "palette_mira": 0.765
+      },
+      {
+        "image": "test_0072.png",
+        "luminance_moyenne": 51.52,
+        "contraste": 62.87,
+        "part_noir": 0.0,
+        "part_blanc_brule": 0.0027,
+        "ecart_fond": 0.0,
+        "palette_mira": 0.886
+      },
+      {
+        "image": "test_0144.png",
+        "luminance_moyenne": 57.28,
+        "contraste": 70.71,
+        "part_noir": 0.0,
+        "part_blanc_brule": 0.0046,
+        "ecart_fond": 0.0,
+        "palette_mira": 0.977
+      }
+    ],
+    "temps_images_tests_s": [
+      35.168,
+      33.238,
+      30.688
+    ],
+    "comparaison_references": {
+      "mira": {
+        "disponible": true,
+        "type": "couleurs uniquement (la forme n'est pas comparée)",
+        "similarite_teintes": 0.455,
+        "references": 1
+      }
+    },
+    "journal": "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/sorties/projets/mira_apparition_STANDARD_c0e14367c3/controle/controle.log"
+  },
+  "images_total": 144,
+  "images_deja_validees": 0,
+  "images_a_rendre": 144,
+  "temps_image_test_s": [
+    35.168,
+    33.238,
+    30.688
+  ],
+  "estimation_minutes": 79.8,
+  "images_rendues_ce_passage": 144,
+  "temps_rendu_s": 4821.2,
+  "temps_par_image_s": {
+    "moyen": 33.39,
+    "min": 30.291,
+    "max": 36.602
+  },
+  "statut": "termine",
+  "duree_totale_s": 4926.1,
+  "video": {
+    "fichier": "sorties/projets/mira_apparition_STANDARD_c0e14367c3/mira_apparition_STANDARD.mp4",
+    "codec": "h264",
+    "largeur": 720,
+    "hauteur": 1280,
+    "images": 144,
+    "duree_s": 6.0
+  },
+  "copie": "sorties/mira_apparition_STANDARD.mp4"
+}

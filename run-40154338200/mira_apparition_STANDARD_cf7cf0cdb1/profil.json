@@ -1,0 +1,16 @@
+{
+  "largeur": 720,
+  "hauteur": 1280,
+  "echantillons": 32,
+  "rebonds": 4,
+  "rebonds_reflets": 2,
+  "rebonds_transparence": 12,
+  "debruitage": true,
+  "seuil_adaptatif": 0.03,
+  "qualite_glow": "MEDIUM",
+  "moteur": "cycles",
+  "profil": "STANDARD",
+  "appareil": "CPU",
+  "prefixe": [],
+  "accord_requis": false
+}
