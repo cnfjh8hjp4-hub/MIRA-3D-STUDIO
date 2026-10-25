@@ -57,13 +57,13 @@ def _cone(nom, loc, r1, r2, prof, rot, mat, parent):
 
 
 def construire(echelle=1.0):
-    corps_m = materiaux.hologramme("arthemis_corps", PAL["principal"], PAL["lumiere"], force=0.75, opacite=0.82,
+    corps_m = materiaux.hologramme("arthemis_corps", PAL["principal"], PAL["lumiere"], force=0.85, opacite=0.95,
                                    balayage=False, constellations=True, plumes=1.0)
-    clair_m = materiaux.hologramme("arthemis_clair", "#7d45ff", PAL["lumiere"], force=0.95, opacite=0.85,
+    clair_m = materiaux.hologramme("arthemis_clair", "#7d45ff", PAL["lumiere"], force=1.0, opacite=0.95,
                                    balayage=False, constellations=False, plumes=1.5)
     plume_m = materiaux.hologramme("arthemis_plume", "#b08aff", "#efe2ff", force=1.3, opacite=0.6, balayage=False)
     bec_m = materiaux.emission("arthemis_bec", "#c7a3ff", 1.6)
-    iris_m = materiaux.emission("arthemis_iris", "#7a3dff", 2.4)
+    iris_m = materiaux.emission("arthemis_iris", "#6b35ff", 2.2)
     iris2_m = materiaux.emission("arthemis_iris_clair", "#b48cff", 1.8)
     serre_m = materiaux.emission("arthemis_serres", "#8a5cff", 1.0)
     pupille_m = materiaux.emission("arthemis_pupille", "#0b0220", 0.2)
@@ -100,13 +100,13 @@ def construire(echelle=1.0):
         P[f"paupiere_{cote}"] = pa; P[f"oeil_{cote}"] = oeil
         # sourcils-aigrettes en V : grandes plumes qui partent au-dessus des yeux vers l'extérieur
         for k, (dx, dz, ang, lg, la) in enumerate(((0.05, 0.11, 38, 0.17, 0.05), (0.13, 0.13, 58, 0.15, 0.045))):
-            _sphere(f"aigrette_{cote}{k}", (s * (0.04 + dx), -0.17, 1.39 + dz), (la, 0.014, lg), plume_m, P["tete"],
-                    rot=(math.radians(-25), math.radians(s * ang), 0), seg=20)
+            _sphere(f"aigrette_{cote}{k}", (s * (0.04 + dx), -0.25, 1.43 + dz), (la, 0.016, lg), plume_m, P["tete"],
+                    rot=(math.radians(-35), math.radians(s * ang), 0), seg=20)
         # rameau de feuilles sur le côté de la tête
         for k in range(4):
             a = math.radians(-20 + k * 28)
-            _sphere(f"feuille_{cote}{k}", (s * (0.34 + 0.03 * k), 0.02, 1.30 + 0.16 * math.sin(a)),
-                    (0.05, 0.012, 0.085), plume_m, P["tete"], rot=(0, math.radians(s * (35 + k * 18)), math.radians(s * 20)), seg=16)
+            _sphere(f"feuille_{cote}{k}", (s * (0.38 + 0.03 * k), 0.02, 1.32 + 0.16 * math.sin(a)),
+                    (0.032, 0.010, 0.10), plume_m, P["tete"], rot=(0, math.radians(s * (35 + k * 18)), math.radians(s * 20)), seg=16)
     # bec : partie haute fixe, partie basse articulée
     _cone("bec_sup", (0, -0.31, 1.255), 0.05, 0.0, 0.13, (math.radians(150), 0, 0), bec_m, P["tete"])
     P["bec_inf"] = _pivot("bec_inf", (0, -0.285, 1.235), P["tete"])

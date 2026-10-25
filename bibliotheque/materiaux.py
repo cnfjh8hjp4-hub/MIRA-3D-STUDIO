@@ -83,14 +83,18 @@ def hologramme(nom, couleur_hex, bord_hex=None, force=2.5, opacite=0.55, balayag
                     L.new(x, n.inputs[k_])
             return n.outputs[0]
         f = 9.0 * plumes
-        v = M("MULTIPLY", sep.outputs["Z"], -f * 1.25)                  # rangées vers le bas
+        # légère irrégularité : bruit qui décale rangées et colonnes (pas de motif mécanique)
+        br = N.new("ShaderNodeTexNoise"); br.inputs["Scale"].default_value = 3.0; L.new(coord.outputs["Object"], br.inputs["Vector"])
+        jit = M("MULTIPLY", M("SUBTRACT", br.outputs["Fac"], 0.5), 0.9)
+        v = M("ADD", M("MULTIPLY", sep.outputs["Z"], -f * 1.6), jit)    # rangées vers le bas, plus serrées
         rang = M("FLOOR", v)
         decal = M("MULTIPLY", M("MODULO", rang, 2.0), 0.5)
-        u = M("ADD", M("MULTIPLY", sep.outputs["X"], f), decal)
+        u = M("ADD", M("ADD", M("MULTIPLY", sep.outputs["X"], f), decal), jit)
         du = M("SUBTRACT", M("FRACT", u), 0.5)
-        dv = M("MULTIPLY", M("FRACT", v), 0.9)
-        d = M("POWER", M("ADD", M("MULTIPLY", du, du), M("MULTIPLY", dv, dv)), 0.5)
-        rim = N.new("ShaderNodeMapRange"); rim.inputs["From Min"].default_value = 0.34; rim.inputs["From Max"].default_value = 0.5
+        dv = M("MULTIPLY", M("FRACT", v), 0.75)
+        # plume pointue : distance en losange arrondi plutôt qu'en cercle
+        d = M("ADD", M("MULTIPLY", M("ABSOLUTE", du), 0.55), M("MULTIPLY", M("POWER", M("ADD", M("MULTIPLY", du, du), M("MULTIPLY", dv, dv)), 0.5), 0.6))
+        rim = N.new("ShaderNodeMapRange"); rim.inputs["From Min"].default_value = 0.40; rim.inputs["From Max"].default_value = 0.55
         rim.inputs["To Min"].default_value = 0.0; rim.inputs["To Max"].default_value = 1.0; rim.clamp = True
         L.new(d, rim.inputs["Value"])
         add2 = N.new("ShaderNodeMath"); add2.operation = "MULTIPLY_ADD"; add2.inputs[1].default_value = force * 1.4
