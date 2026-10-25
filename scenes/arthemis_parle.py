@@ -42,8 +42,8 @@ def construire(meta):
         for t, ang in ((0, 0), (4.6, 0), (5.0, s * -9), (5.5, s * 3), (6.0, 0), (D, 0)):
             a.rotation_euler = (0, math.radians(ang), 0); a.keyframe_insert("rotation_euler", frame=1 + round(t * fps))
     mouvements.lisser([P["corps"], P["aile_g"], P["aile_d"]])
-    cam, cible = cameras.creer(focale=50, cible_loc=(0, 0, 1.18), dof_fstop=2.2)
-    cameras.travelling_avant(cam, D, fps, de=4.0, a=2.9, hauteur=1.32, x=(-0.25, 0.1))
+    cam, cible = cameras.creer(focale=50, cible_loc=(0, 0, 1.15), dof_fstop=2.2)
+    cameras.travelling_avant(cam, D, fps, de=4.2, a=3.0, hauteur=1.3, x=(-0.25, 0.1))
     eclairages.monde(PALETTES["univers"]["nuit_profonde"], 1.0)
     eclairages.nuit_holo(cible, cle_hex="#8a3dff", contre_hex="#2ce6ff", intensite=0.8)
 

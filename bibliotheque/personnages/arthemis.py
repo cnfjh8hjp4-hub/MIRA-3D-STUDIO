@@ -57,63 +57,67 @@ def _cone(nom, loc, r1, r2, prof, rot, mat, parent):
 
 
 def construire(echelle=1.0):
-    corps_m = materiaux.hologramme("arthemis_corps", PAL["principal"], PAL["lumiere"], force=1.1, opacite=0.75,
+    corps_m = materiaux.hologramme("arthemis_corps", PAL["principal"], PAL["lumiere"], force=0.75, opacite=0.82,
                                    balayage=False, constellations=True, plumes=1.0)
-    clair_m = materiaux.hologramme("arthemis_clair", "#8f5bff", PAL["lumiere"], force=1.5, opacite=0.8,
-                                   balayage=False, constellations=True, plumes=1.6)
-    lumi_m = materiaux.emission("arthemis_lumiere", PAL["lumiere"], 4.0)
-    bec_m = materiaux.emission("arthemis_bec", "#b98cff", 2.2)
-    iris_m = materiaux.emission("arthemis_iris", "#cdb2ff", 6.0)
-    pupille_m = materiaux.emission("arthemis_pupille", "#12042a", 0.4)
-    globe_m = materiaux.emission("arthemis_globe", "#2a0a66", 1.5)
-    reflet_m = materiaux.emission("arthemis_reflet", "#ffffff", 25.0)
+    clair_m = materiaux.hologramme("arthemis_clair", "#7d45ff", PAL["lumiere"], force=0.95, opacite=0.85,
+                                   balayage=False, constellations=False, plumes=1.5)
+    plume_m = materiaux.hologramme("arthemis_plume", "#b08aff", "#efe2ff", force=1.3, opacite=0.6, balayage=False)
+    bec_m = materiaux.emission("arthemis_bec", "#c7a3ff", 1.6)
+    iris_m = materiaux.emission("arthemis_iris", "#9d6bff", 2.8)
+    iris2_m = materiaux.emission("arthemis_iris_clair", "#d9c2ff", 3.5)
+    pupille_m = materiaux.emission("arthemis_pupille", "#0b0220", 0.2)
+    globe_m = materiaux.emission("arthemis_globe", "#2a0a66", 0.8)
+    cerne_m = materiaux.emission("arthemis_cerne", "#160436", 0.6)
+    reflet_m = materiaux.emission("arthemis_reflet", "#ffffff", 18.0)
 
     P = {}
     P["racine"] = _pivot("arthemis", (0, 0, 0))
     P["corps"] = _pivot("corps", (0, 0, 0.55), P["racine"])
-    P["tete"] = _pivot("tete", (0, 0.0, 1.16), P["corps"])
-    # corps : œuf effilé vers le haut, poitrail clair, queue
-    c = _sphere("corps_m", (0, 0, 0.70), (0.40, 0.36, 0.56), corps_m, P["corps"], subdiv=1)
-    t = c.modifiers.new("effile", "SIMPLE_DEFORM"); t.deform_method = "TAPER"; t.factor = -0.35; t.deform_axis = "Z"
-    _sphere("poitrail", (0, -0.20, 0.72), (0.29, 0.16, 0.42), clair_m, P["corps"], subdiv=1)
-    _sphere("queue", (0, 0.22, 0.22), (0.16, 0.10, 0.20), corps_m, P["corps"], rot=(math.radians(-25), 0, 0))
-    # tête, disques faciaux
-    _sphere("tete_m", (0, 0, 1.38), (0.37, 0.33, 0.32), corps_m, P["tete"], subdiv=1)
+    P["tete"] = _pivot("tete", (0, 0.0, 1.08), P["corps"])
+    # corps en œuf effilé, collerette qui relie la tête, poitrail en écailles, queue
+    c = _sphere("corps_m", (0, 0, 0.68), (0.36, 0.33, 0.52), corps_m, P["corps"], subdiv=1)
+    t = c.modifiers.new("effile", "SIMPLE_DEFORM"); t.deform_method = "TAPER"; t.factor = -0.25; t.deform_axis = "Z"
+    _sphere("collerette", (0, -0.02, 1.08), (0.33, 0.29, 0.17), corps_m, P["corps"], subdiv=1)
+    _sphere("poitrail", (0, -0.17, 0.70), (0.27, 0.15, 0.40), clair_m, P["corps"], subdiv=1)
+    _sphere("queue", (0, 0.20, 0.20), (0.15, 0.09, 0.20), corps_m, P["corps"], rot=(math.radians(-25), 0, 0))
+    # tête et disques faciaux
+    _sphere("tete_m", (0, 0, 1.31), (0.36, 0.31, 0.30), corps_m, P["tete"], subdiv=1)
     for s in (1, -1):
-        _sphere(f"disque_{'g' if s > 0 else 'd'}", (s * 0.125, -0.235, 1.39), (0.155, 0.08, 0.15), clair_m, P["tete"])
-    # yeux (globe sombre, iris lavande lumineux, pupille, reflet) + paupières mobiles
+        _sphere(f"disque_{'g' if s > 0 else 'd'}", (s * 0.12, -0.215, 1.31), (0.165, 0.075, 0.16), clair_m, P["tete"])
     for s, cote in ((1, "g"), (-1, "d")):
-        x = s * 0.125; centre = (x, -0.29, 1.41)
+        x = s * 0.12; centre = (x, -0.265, 1.33)
         oeil = _pivot(f"oeil_{cote}", centre, P["tete"])
-        _sphere(f"globe_{cote}", centre, (0.088, 0.088, 0.088), globe_m, oeil)
-        _sphere(f"iris_{cote}", (x, -0.355, 1.41), (0.068, 0.03, 0.068), iris_m, oeil)
-        _sphere(f"pupille_{cote}", (x, -0.375, 1.41), (0.034, 0.016, 0.034), pupille_m, oeil)
-        _sphere(f"reflet_{cote}", (x + s * -0.02, -0.392, 1.435), (0.009, 0.006, 0.009), reflet_m, oeil, seg=12)
-        pa = _demi_sphere(f"paupiere_{cote}", centre, 0.094, corps_m, P["tete"])
+        _sphere(f"globe_{cote}", centre, (0.086, 0.086, 0.086), globe_m, oeil)
+        bpy.ops.mesh.primitive_torus_add(major_radius=0.093, minor_radius=0.014, location=(x, -0.30, 1.33), rotation=(math.radians(90), 0, 0))
+        tor = bpy.context.object; tor.name = f"cerne_{cote}"; tor.data.materials.append(cerne_m); _lier(tor, P["tete"])
+        _sphere(f"iris_{cote}", (x, -0.33, 1.33), (0.074, 0.026, 0.074), iris_m, oeil)
+        _sphere(f"iris_clair_{cote}", (x, -0.342, 1.33), (0.052, 0.02, 0.052), iris2_m, oeil)
+        _sphere(f"pupille_{cote}", (x, -0.355, 1.33), (0.033, 0.014, 0.033), pupille_m, oeil)
+        _sphere(f"reflet_{cote}", (x + s * -0.022, -0.366, 1.355), (0.010, 0.006, 0.010), reflet_m, oeil, seg=12)
+        pa = _demi_sphere(f"paupiere_{cote}", centre, 0.091, corps_m, P["tete"])
         pa.rotation_euler = (math.radians(-35), 0, 0)
         P[f"paupiere_{cote}"] = pa; P[f"oeil_{cote}"] = oeil
-        # aigrettes en V au-dessus des yeux
-        for k, (dx, dz, ang, lg) in enumerate(((0.03, 0.17, 30, 0.17), (0.09, 0.19, 42, 0.20), (0.15, 0.16, 55, 0.15))):
-            _sphere(f"aigrette_{cote}{k}", (s * (0.06 + dx), -0.16, 1.40 + dz), (0.022, 0.012, lg), lumi_m, P["tete"],
-                    rot=(math.radians(-20), math.radians(s * ang), 0), seg=16)
-        # rameaux de feuilles sur les côtés de la tête
-        for k in range(5):
-            a = math.radians(-40 + k * 22)
-            _sphere(f"feuille_{cote}{k}", (s * (0.36 + 0.05 * math.cos(a)), -0.02 + 0.06 * k * 0.3, 1.40 + 0.13 * math.sin(a)),
-                    (0.012, 0.042, 0.075), lumi_m, P["tete"], rot=(0, math.radians(s * (20 + k * 12)), 0), seg=12)
+        # sourcils-aigrettes en V : grandes plumes qui partent au-dessus des yeux vers l'extérieur
+        for k, (dx, dz, ang, lg, la) in enumerate(((0.05, 0.11, 38, 0.17, 0.05), (0.13, 0.13, 58, 0.15, 0.045))):
+            _sphere(f"aigrette_{cote}{k}", (s * (0.04 + dx), -0.17, 1.39 + dz), (la, 0.014, lg), plume_m, P["tete"],
+                    rot=(math.radians(-25), math.radians(s * ang), 0), seg=20)
+        # rameau de feuilles sur le côté de la tête
+        for k in range(4):
+            a = math.radians(-20 + k * 28)
+            _sphere(f"feuille_{cote}{k}", (s * (0.34 + 0.03 * k), 0.02, 1.30 + 0.16 * math.sin(a)),
+                    (0.05, 0.012, 0.085), plume_m, P["tete"], rot=(0, math.radians(s * (35 + k * 18)), math.radians(s * 20)), seg=16)
     # bec : partie haute fixe, partie basse articulée
-    _cone("bec_sup", (0, -0.335, 1.325), 0.045, 0.0, 0.12, (math.radians(150), 0, 0), bec_m, P["tete"])
-    P["bec_inf"] = _pivot("bec_inf", (0, -0.31, 1.31), P["tete"])
-    _cone("bec_inf_m", (0, -0.325, 1.285), 0.03, 0.0, 0.06, (math.radians(160), 0, 0), bec_m, P["bec_inf"])
-    # ailes repliées, articulées à l'épaule
+    _cone("bec_sup", (0, -0.31, 1.255), 0.05, 0.0, 0.13, (math.radians(150), 0, 0), bec_m, P["tete"])
+    P["bec_inf"] = _pivot("bec_inf", (0, -0.285, 1.235), P["tete"])
+    _cone("bec_inf_m", (0, -0.30, 1.21), 0.032, 0.0, 0.065, (math.radians(160), 0, 0), bec_m, P["bec_inf"])
+    # ailes repliées contre le corps, articulées à l'épaule ; serres
     for s, cote in ((1, "g"), (-1, "d")):
-        P[f"aile_{cote}"] = _pivot(f"aile_{cote}", (s * 0.33, 0.02, 1.08), P["corps"])
-        _sphere(f"aile_{cote}_m", (s * 0.40, 0.04, 0.68), (0.10, 0.25, 0.50), corps_m, P[f"aile_{cote}"],
-                rot=(math.radians(-6), math.radians(s * -8), 0), subdiv=1)
-        _sphere(f"remiges_{cote}", (s * 0.40, 0.14, 0.30), (0.07, 0.10, 0.22), clair_m, P[f"aile_{cote}"], rot=(math.radians(-15), 0, 0))
-        # serres : trois doigts par patte
+        P[f"aile_{cote}"] = _pivot(f"aile_{cote}", (s * 0.28, 0.02, 1.02), P["corps"])
+        _sphere(f"aile_{cote}_m", (s * 0.30, 0.03, 0.66), (0.09, 0.24, 0.50), corps_m, P[f"aile_{cote}"],
+                rot=(math.radians(-5), math.radians(s * -6), math.radians(s * 12)), subdiv=1)
+        _sphere(f"remiges_{cote}", (s * 0.28, 0.13, 0.28), (0.07, 0.10, 0.22), clair_m, P[f"aile_{cote}"], rot=(math.radians(-15), 0, 0))
         for k, ang in enumerate((-25, 0, 25)):
-            _cone(f"serre_{cote}{k}", (s * 0.12 + math.sin(math.radians(ang)) * 0.05, -0.22, 0.04), 0.02, 0.004, 0.11,
+            _cone(f"serre_{cote}{k}", (s * 0.11 + math.sin(math.radians(ang)) * 0.05, -0.20, 0.04), 0.02, 0.004, 0.11,
                   (math.radians(95), 0, math.radians(ang)), bec_m, P["corps"])
     if echelle != 1.0:
         P["racine"].scale = (echelle,) * 3

@@ -62,24 +62,39 @@ def hologramme(nom, couleur_hex, bord_hex=None, force=2.5, opacite=0.55, balayag
         mul = N.new("ShaderNodeMath"); mul.operation = "MULTIPLY"
         L.new(dernier, mul.inputs[0]); L.new(scan.outputs["Result"], mul.inputs[1]); dernier = mul.outputs[0]
     if constellations:
-        vo = N.new("ShaderNodeTexVoronoi"); vo.feature = "DISTANCE_TO_EDGE"; vo.inputs["Scale"].default_value = 26
+        vo = N.new("ShaderNodeTexVoronoi"); vo.feature = "DISTANCE_TO_EDGE"; vo.inputs["Scale"].default_value = 40
         L.new(coord.outputs["Object"], vo.inputs["Vector"])
-        ligne = N.new("ShaderNodeMapRange"); ligne.inputs["From Max"].default_value = 0.018
+        ligne = N.new("ShaderNodeMapRange"); ligne.inputs["From Max"].default_value = 0.012
         ligne.inputs["To Min"].default_value = 1.0; ligne.inputs["To Max"].default_value = 0.0; ligne.clamp = True
         L.new(vo.outputs["Distance"], ligne.inputs["Value"])
-        add = N.new("ShaderNodeMath"); add.operation = "MULTIPLY_ADD"; add.inputs[1].default_value = force * 1.5
+        add = N.new("ShaderNodeMath"); add.operation = "MULTIPLY_ADD"; add.inputs[1].default_value = force * 0.6
         L.new(ligne.outputs["Result"], add.inputs[0]); L.new(dernier, add.inputs[2]); dernier = add.outputs[0]
     if plumes:
-        # écailles de plumes : Voronoi étiré vers le bas, bords des cellules plus lumineux
-        mp = N.new("ShaderNodeMapping"); mp.inputs["Scale"].default_value = (1.0, 1.0, 0.45)
-        L.new(coord.outputs["Object"], mp.inputs["Vector"])
-        vf = N.new("ShaderNodeTexVoronoi"); vf.feature = "DISTANCE_TO_EDGE"; vf.inputs["Scale"].default_value = 14 * plumes
-        L.new(mp.outputs[0], vf.inputs["Vector"])
-        bord = N.new("ShaderNodeMapRange"); bord.inputs["From Max"].default_value = 0.08
-        bord.inputs["To Min"].default_value = 1.0; bord.inputs["To Max"].default_value = 0.0; bord.clamp = True
-        L.new(vf.outputs["Distance"], bord.inputs["Value"])
-        add2 = N.new("ShaderNodeMath"); add2.operation = "MULTIPLY_ADD"; add2.inputs[1].default_value = force * 1.1
-        L.new(bord.outputs["Result"], add2.inputs[0]); L.new(dernier, add2.inputs[2]); dernier = add2.outputs[0]
+        # plumes en écailles qui se chevauchent : rangées décalées, bord inférieur arrondi lumineux
+        sep = N.new("ShaderNodeSeparateXYZ"); L.new(coord.outputs["Object"], sep.inputs[0])
+        def M(op, a_, b_=None, v=None):
+            n = N.new("ShaderNodeMath"); n.operation = op
+            for k_, x in enumerate((a_, b_)):
+                if x is None:
+                    continue
+                if isinstance(x, (int, float)):
+                    n.inputs[k_].default_value = x
+                else:
+                    L.new(x, n.inputs[k_])
+            return n.outputs[0]
+        f = 9.0 * plumes
+        v = M("MULTIPLY", sep.outputs["Z"], -f * 1.25)                  # rangées vers le bas
+        rang = M("FLOOR", v)
+        decal = M("MULTIPLY", M("MODULO", rang, 2.0), 0.5)
+        u = M("ADD", M("MULTIPLY", sep.outputs["X"], f), decal)
+        du = M("SUBTRACT", M("FRACT", u), 0.5)
+        dv = M("MULTIPLY", M("FRACT", v), 0.9)
+        d = M("POWER", M("ADD", M("MULTIPLY", du, du), M("MULTIPLY", dv, dv)), 0.5)
+        rim = N.new("ShaderNodeMapRange"); rim.inputs["From Min"].default_value = 0.34; rim.inputs["From Max"].default_value = 0.5
+        rim.inputs["To Min"].default_value = 0.0; rim.inputs["To Max"].default_value = 1.0; rim.clamp = True
+        L.new(d, rim.inputs["Value"])
+        add2 = N.new("ShaderNodeMath"); add2.operation = "MULTIPLY_ADD"; add2.inputs[1].default_value = force * 1.4
+        L.new(rim.outputs["Result"], add2.inputs[0]); L.new(dernier, add2.inputs[2]); dernier = add2.outputs[0]
     mixc = N.new("ShaderNodeMix"); mixc.data_type = "RGBA"
     mixc.inputs["A"].default_value = hex_vers_lineaire(couleur_hex)
     mixc.inputs["B"].default_value = hex_vers_lineaire(bord_hex or couleur_hex)
