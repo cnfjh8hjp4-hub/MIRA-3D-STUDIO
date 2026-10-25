@@ -63,11 +63,12 @@ def construire(echelle=1.0):
                                    balayage=False, constellations=False, plumes=1.5)
     plume_m = materiaux.hologramme("arthemis_plume", "#b08aff", "#efe2ff", force=1.3, opacite=0.6, balayage=False)
     bec_m = materiaux.emission("arthemis_bec", "#c7a3ff", 1.6)
-    iris_m = materiaux.emission("arthemis_iris", "#9d6bff", 2.8)
-    iris2_m = materiaux.emission("arthemis_iris_clair", "#d9c2ff", 3.5)
+    iris_m = materiaux.emission("arthemis_iris", "#7a3dff", 2.4)
+    iris2_m = materiaux.emission("arthemis_iris_clair", "#b48cff", 1.8)
+    serre_m = materiaux.emission("arthemis_serres", "#8a5cff", 1.0)
     pupille_m = materiaux.emission("arthemis_pupille", "#0b0220", 0.2)
     globe_m = materiaux.emission("arthemis_globe", "#2a0a66", 0.8)
-    cerne_m = materiaux.emission("arthemis_cerne", "#160436", 0.6)
+    cerne_m = materiaux.emission("arthemis_cerne", "#2a0a66", 1.0)
     reflet_m = materiaux.emission("arthemis_reflet", "#ffffff", 18.0)
 
     P = {}
@@ -81,17 +82,17 @@ def construire(echelle=1.0):
     _sphere("poitrail", (0, -0.17, 0.70), (0.27, 0.15, 0.40), clair_m, P["corps"], subdiv=1)
     _sphere("queue", (0, 0.20, 0.20), (0.15, 0.09, 0.20), corps_m, P["corps"], rot=(math.radians(-25), 0, 0))
     # tête et disques faciaux
-    _sphere("tete_m", (0, 0, 1.31), (0.36, 0.31, 0.30), corps_m, P["tete"], subdiv=1)
+    _sphere("tete_m", (0, 0, 1.32), (0.39, 0.33, 0.33), corps_m, P["tete"], subdiv=1)
     for s in (1, -1):
         _sphere(f"disque_{'g' if s > 0 else 'd'}", (s * 0.12, -0.215, 1.31), (0.165, 0.075, 0.16), clair_m, P["tete"])
     for s, cote in ((1, "g"), (-1, "d")):
         x = s * 0.12; centre = (x, -0.265, 1.33)
         oeil = _pivot(f"oeil_{cote}", centre, P["tete"])
         _sphere(f"globe_{cote}", centre, (0.086, 0.086, 0.086), globe_m, oeil)
-        bpy.ops.mesh.primitive_torus_add(major_radius=0.093, minor_radius=0.014, location=(x, -0.30, 1.33), rotation=(math.radians(90), 0, 0))
+        bpy.ops.mesh.primitive_torus_add(major_radius=0.092, minor_radius=0.008, location=(x, -0.30, 1.33), rotation=(math.radians(90), 0, 0))
         tor = bpy.context.object; tor.name = f"cerne_{cote}"; tor.data.materials.append(cerne_m); _lier(tor, P["tete"])
-        _sphere(f"iris_{cote}", (x, -0.33, 1.33), (0.074, 0.026, 0.074), iris_m, oeil)
-        _sphere(f"iris_clair_{cote}", (x, -0.342, 1.33), (0.052, 0.02, 0.052), iris2_m, oeil)
+        _sphere(f"iris_{cote}", (x, -0.33, 1.33), (0.078, 0.026, 0.078), iris_m, oeil)
+        _sphere(f"iris_clair_{cote}", (x, -0.343, 1.33), (0.05, 0.018, 0.05), iris2_m, oeil)
         _sphere(f"pupille_{cote}", (x, -0.355, 1.33), (0.033, 0.014, 0.033), pupille_m, oeil)
         _sphere(f"reflet_{cote}", (x + s * -0.022, -0.366, 1.355), (0.010, 0.006, 0.010), reflet_m, oeil, seg=12)
         pa = _demi_sphere(f"paupiere_{cote}", centre, 0.091, corps_m, P["tete"])
@@ -118,7 +119,7 @@ def construire(echelle=1.0):
         _sphere(f"remiges_{cote}", (s * 0.28, 0.13, 0.28), (0.07, 0.10, 0.22), clair_m, P[f"aile_{cote}"], rot=(math.radians(-15), 0, 0))
         for k, ang in enumerate((-25, 0, 25)):
             _cone(f"serre_{cote}{k}", (s * 0.11 + math.sin(math.radians(ang)) * 0.05, -0.20, 0.04), 0.02, 0.004, 0.11,
-                  (math.radians(95), 0, math.radians(ang)), bec_m, P["corps"])
+                  (math.radians(95), 0, math.radians(ang)), serre_m, P["corps"])
     if echelle != 1.0:
         P["racine"].scale = (echelle,) * 3
     return P
