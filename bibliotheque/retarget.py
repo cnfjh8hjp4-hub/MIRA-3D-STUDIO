@@ -70,3 +70,20 @@ def _parent(p, pivots):
                 return k
         o = o.parent
     return None
+
+
+def amplitude_mouvement(pivots):
+    """Angle maximal (degrés) parcouru par chaque pivot animé : sert à vérifier qu'un mouvement a vraiment été transféré."""
+    import math
+    out = {}
+    for nom, o in pivots.items():
+        ad = o.animation_data
+        if not (ad and ad.action):
+            continue
+        fcs = [fc for fc in ad.action.fcurves if fc.data_path == "rotation_quaternion"]
+        if len(fcs) < 4:
+            continue
+        frames = sorted({int(k.co[0]) for k in fcs[0].keyframe_points})
+        qs = [Quaternion([fcs[i].evaluate(f) for i in range(4)]).normalized() for f in frames]
+        out[nom] = round(max(math.degrees(qs[0].rotation_difference(q).angle) for q in qs), 1)
+    return out

@@ -1,0 +1,48 @@
+{
+  "objets": [
+    {
+      "role": "bureau",
+      "id": "kenney/furniture-kit/desk",
+      "fichier": "cache/assets/kenney/furniture-kit/desk.glb"
+    },
+    {
+      "role": "chaise",
+      "id": "kenney/furniture-kit/chairDesk",
+      "fichier": "cache/assets/kenney/furniture-kit/chairDesk.glb"
+    },
+    {
+      "role": "ecran",
+      "id": "kenney/furniture-kit/computerScreen",
+      "fichier": "cache/assets/kenney/furniture-kit/computerScreen.glb"
+    },
+    {
+      "role": "clavier",
+      "id": "kenney/furniture-kit/computerKeyboard",
+      "fichier": "cache/assets/kenney/furniture-kit/computerKeyboard.glb"
+    },
+    {
+      "role": "souris",
+      "id": "kenney/furniture-kit/computerMouse",
+      "fichier": "cache/assets/kenney/furniture-kit/computerMouse.glb"
+    },
+    {
+      "role": "lampe",
+      "id": "kenney/furniture-kit/lampRoundTable",
+      "fichier": "cache/assets/kenney/furniture-kit/lampRoundTable.glb"
+    },
+    {
+      "role": "plante",
+      "id": "kenney/furniture-kit/plantSmall1",
+      "fichier": "cache/assets/kenney/furniture-kit/plantSmall1.glb"
+    },
+    {
+      "role": "livres",
+      "id": "kenney/furniture-kit/books",
+      "fichier": "cache/assets/kenney/furniture-kit/books.glb"
+    }
+  ],
+  "hdri": {
+    "id": "polyhaven/moonless_golf",
+    "fichier": "cache/assets/polyhaven/moonless_golf/moonless_golf_1k.hdr"
+  }
+}

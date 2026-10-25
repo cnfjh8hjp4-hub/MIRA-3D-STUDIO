@@ -1,1 +1,2096 @@
-{"assets": {}}
+{
+  "assets": {
+    "polyhaven/moonless_golf": {
+      "id": "polyhaven/moonless_golf",
+      "source": "polyhaven",
+      "type": "hdri",
+      "titre": "Moonless Golf",
+      "tags": [
+        "grass",
+        "golf",
+        "stars",
+        "milky way",
+        "field",
+        "outdoor",
+        "skies",
+        "nature",
+        "night",
+        "clear",
+        "medium contrast",
+        "natural light",
+        "artificial light"
+      ],
+      "style": "realiste",
+      "auteurs": [
+        "Greg Zaal"
+      ],
+      "url": "https://polyhaven.com/a/moonless_golf",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://polyhaven.com/license",
+        "verifiee": true,
+        "preuve": "Toutes les ressources Poly Haven sont CC0 (polyhaven.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "format": "hdr",
+      "ph_type": "hdris",
+      "statut": "valide",
+      "fichiers": [
+        "cache/assets/polyhaven/moonless_golf/moonless_golf_1k.hdr"
+      ],
+      "sha": "a7ce68c90e489804",
+      "taille_ko": 1633,
+      "telecharge_le": "2026-10-25 00:00:58",
+      "temps_telechargement_s": 0.2,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "resolution": [
+            1024,
+            512
+          ]
+        },
+        "erreur": null,
+        "secondes": 1.44,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/polyhaven_moonless_golf.png"
+    },
+    "polyhaven/dikhololo_night": {
+      "id": "polyhaven/dikhololo_night",
+      "source": "polyhaven",
+      "type": "hdri",
+      "titre": "Dikhololo Night",
+      "tags": [
+        "bush",
+        "grass",
+        "road",
+        "safari",
+        "tree",
+        "veld",
+        "milky way",
+        "stars",
+        "astronomy",
+        "outdoor",
+        "nature",
+        "night",
+        "clear",
+        "low contrast",
+        "natural light"
+      ],
+      "style": "realiste",
+      "auteurs": [
+        "Greg Zaal"
+      ],
+      "url": "https://polyhaven.com/a/dikhololo_night",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://polyhaven.com/license",
+        "verifiee": true,
+        "preuve": "Toutes les ressources Poly Haven sont CC0 (polyhaven.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "format": "hdr",
+      "ph_type": "hdris",
+      "statut": "catalogue"
+    },
+    "polyhaven/satara_night": {
+      "id": "polyhaven/satara_night",
+      "source": "polyhaven",
+      "type": "hdri",
+      "titre": "Satara Night",
+      "tags": [
+        "stars",
+        "tree",
+        "lamp",
+        "milky way",
+        "galaxy",
+        "hut",
+        "outdoor",
+        "skies",
+        "nature",
+        "clear",
+        "night",
+        "high contrast",
+        "artificial light"
+      ],
+      "style": "realiste",
+      "auteurs": [
+        "Greg Zaal"
+      ],
+      "url": "https://polyhaven.com/a/satara_night",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://polyhaven.com/license",
+        "verifiee": true,
+        "preuve": "Toutes les ressources Poly Haven sont CC0 (polyhaven.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "format": "hdr",
+      "ph_type": "hdris",
+      "statut": "catalogue"
+    },
+    "polyhaven/brown_photostudio_02": {
+      "id": "polyhaven/brown_photostudio_02",
+      "source": "polyhaven",
+      "type": "hdri",
+      "titre": "Brown Photostudio 02",
+      "tags": [
+        "bed",
+        "studio",
+        "fluorescent",
+        "window",
+        "couch",
+        "chair",
+        "photo",
+        "table",
+        "kitchen",
+        "fridge",
+        "backplates",
+        "urban",
+        "studio",
+        "indoor",
+        "artificial light",
+        "natural light",
+        "medium contrast"
+      ],
+      "style": "realiste",
+      "auteurs": [
+        "Sergej Majboroda"
+      ],
+      "url": "https://polyhaven.com/a/brown_photostudio_02",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://polyhaven.com/license",
+        "verifiee": true,
+        "preuve": "Toutes les ressources Poly Haven sont CC0 (polyhaven.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "format": "hdr",
+      "ph_type": "hdris",
+      "statut": "catalogue"
+    },
+    "polyhaven/studio_small_09": {
+      "id": "polyhaven/studio_small_09",
+      "source": "polyhaven",
+      "type": "hdri",
+      "titre": "Studio Small 09",
+      "tags": [
+        "umbrella",
+        "softbox",
+        "infinity",
+        "lamp",
+        "studio",
+        "photo",
+        "medium contrast",
+        "indoor",
+        "urban",
+        "artificial light",
+        "studio"
+      ],
+      "style": "realiste",
+      "auteurs": [
+        "Sergej Majboroda"
+      ],
+      "url": "https://polyhaven.com/a/studio_small_09",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://polyhaven.com/license",
+        "verifiee": true,
+        "preuve": "Toutes les ressources Poly Haven sont CC0 (polyhaven.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "format": "hdr",
+      "ph_type": "hdris",
+      "statut": "catalogue"
+    },
+    "polyhaven/WoodenTable_01": {
+      "id": "polyhaven/WoodenTable_01",
+      "source": "polyhaven",
+      "type": "modele",
+      "titre": "Wooden Table 01",
+      "tags": [
+        "vintage",
+        "wood",
+        "prop",
+        "table",
+        "school",
+        "desk",
+        "old",
+        "worn",
+        "furniture"
+      ],
+      "style": "realiste",
+      "auteurs": [
+        "Ethan Place"
+      ],
+      "url": "https://polyhaven.com/a/WoodenTable_01",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://polyhaven.com/license",
+        "verifiee": true,
+        "preuve": "Toutes les ressources Poly Haven sont CC0 (polyhaven.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "format": "gltf",
+      "ph_type": "models",
+      "statut": "importe",
+      "fichiers": [
+        "cache/assets/polyhaven/WoodenTable_01/WoodenTable_01_1k.gltf",
+        "cache/assets/polyhaven/WoodenTable_01/WoodenTable_01.bin",
+        "cache/assets/polyhaven/WoodenTable_01/textures/WoodenTable_01_nor_gl_1k.jpg",
+        "cache/assets/polyhaven/WoodenTable_01/textures/WoodenTable_01_diff_1k.jpg",
+        "cache/assets/polyhaven/WoodenTable_01/textures/WoodenTable_01_arm_1k.jpg"
+      ],
+      "sha": "22683fa69ae72b85",
+      "taille_ko": 541,
+      "telecharge_le": "2026-10-25 00:01:05",
+      "temps_telechargement_s": 0.4,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "objets": 1,
+          "maillages": 1,
+          "polygones": 952,
+          "materiaux": [
+            "WoodenTable_01"
+          ],
+          "armatures": 0,
+          "dimensions_m": [
+            1.8,
+            0.657,
+            0.549
+          ]
+        },
+        "erreur": null,
+        "secondes": 0.94,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/polyhaven_woodentable_01.png"
+    },
+    "polyhaven/desk_lamp_arm_01": {
+      "id": "polyhaven/desk_lamp_arm_01",
+      "source": "polyhaven",
+      "type": "modele",
+      "titre": "Desk Lamp Arm 01",
+      "tags": [
+        "industrial",
+        "lamp",
+        "mounted",
+        "fixed",
+        "desk",
+        "table",
+        "light",
+        "arm",
+        "lighting",
+        "rigged",
+        "collection: the_shed"
+      ],
+      "style": "realiste",
+      "auteurs": [
+        "Yann Kervran",
+        "Kuutti Siitonen"
+      ],
+      "url": "https://polyhaven.com/a/desk_lamp_arm_01",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://polyhaven.com/license",
+        "verifiee": true,
+        "preuve": "Toutes les ressources Poly Haven sont CC0 (polyhaven.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "format": "gltf",
+      "ph_type": "models",
+      "statut": "importe",
+      "fichiers": [
+        "cache/assets/polyhaven/desk_lamp_arm_01/desk_lamp_arm_01_1k.gltf",
+        "cache/assets/polyhaven/desk_lamp_arm_01/textures/desk_lamp_arm_01_nor_gl_1k.jpg",
+        "cache/assets/polyhaven/desk_lamp_arm_01/textures/desk_lamp_arm_01_arm_1k.jpg",
+        "cache/assets/polyhaven/desk_lamp_arm_01/textures/desk_lamp_arm_01_diff_1k.jpg",
+        "cache/assets/polyhaven/desk_lamp_arm_01/desk_lamp_arm_01.bin"
+      ],
+      "sha": "46adf5314460ea0d",
+      "taille_ko": 2808,
+      "telecharge_le": "2026-10-25 00:01:05",
+      "temps_telechargement_s": 0.5,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "objets": 1,
+          "maillages": 1,
+          "polygones": 24102,
+          "materiaux": [
+            "desk_lamp_arm_01",
+            "desk_lamp_arm_01_light"
+          ],
+          "armatures": 0,
+          "dimensions_m": [
+            0.202,
+            0.614,
+            0.893
+          ]
+        },
+        "erreur": null,
+        "secondes": 0.94,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/polyhaven_desk_lamp_arm_01.png"
+    },
+    "polyhaven/sofa_02": {
+      "id": "polyhaven/sofa_02",
+      "source": "polyhaven",
+      "type": "modele",
+      "titre": "Sofa 02",
+      "tags": [
+        "wood",
+        "furniture",
+        "chair",
+        "prop",
+        "couch",
+        "leather",
+        "fabric",
+        "furniture",
+        "seating"
+      ],
+      "style": "realiste",
+      "auteurs": [
+        "Kirill Sannikov"
+      ],
+      "url": "https://polyhaven.com/a/sofa_02",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://polyhaven.com/license",
+        "verifiee": true,
+        "preuve": "Toutes les ressources Poly Haven sont CC0 (polyhaven.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "format": "gltf",
+      "ph_type": "models",
+      "statut": "catalogue"
+    },
+    "polyhaven/sofa_03": {
+      "id": "polyhaven/sofa_03",
+      "source": "polyhaven",
+      "type": "modele",
+      "titre": "Sofa 03",
+      "tags": [
+        "vintage",
+        "chair",
+        "couch",
+        "seat",
+        "fancy",
+        "mansion",
+        "manor",
+        "victorian",
+        "antique",
+        "leather",
+        "furniture",
+        "seating"
+      ],
+      "style": "realiste",
+      "auteurs": [
+        "Fran Calvente"
+      ],
+      "url": "https://polyhaven.com/a/sofa_03",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://polyhaven.com/license",
+        "verifiee": true,
+        "preuve": "Toutes les ressources Poly Haven sont CC0 (polyhaven.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "format": "gltf",
+      "ph_type": "models",
+      "statut": "catalogue"
+    },
+    "polyhaven/Lantern_01": {
+      "id": "polyhaven/Lantern_01",
+      "source": "polyhaven",
+      "type": "modele",
+      "titre": "Lantern 01",
+      "tags": [
+        "prop",
+        "metal",
+        "glass",
+        "lantern",
+        "antique",
+        "vintage",
+        "hurricane",
+        "lamp",
+        "bronze",
+        "oldfashioned",
+        "brass",
+        "copper",
+        "props",
+        "lighting"
+      ],
+      "style": "realiste",
+      "auteurs": [
+        "Rajil Jose Macatangay"
+      ],
+      "url": "https://polyhaven.com/a/Lantern_01",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://polyhaven.com/license",
+        "verifiee": true,
+        "preuve": "Toutes les ressources Poly Haven sont CC0 (polyhaven.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "format": "gltf",
+      "ph_type": "models",
+      "statut": "catalogue"
+    },
+    "polyhaven/street_lamp_01": {
+      "id": "polyhaven/street_lamp_01",
+      "source": "polyhaven",
+      "type": "modele",
+      "titre": "Street Lamp 01",
+      "tags": [
+        "street",
+        "road",
+        "light",
+        "lamppost",
+        "outdoor",
+        "pole",
+        "sidewalk",
+        "night",
+        " urban",
+        "city",
+        "lighting",
+        "industrial",
+        "collection: hidden_alley"
+      ],
+      "style": "realiste",
+      "auteurs": [
+        "Josh Dean"
+      ],
+      "url": "https://polyhaven.com/a/street_lamp_01",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://polyhaven.com/license",
+        "verifiee": true,
+        "preuve": "Toutes les ressources Poly Haven sont CC0 (polyhaven.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "format": "gltf",
+      "ph_type": "models",
+      "statut": "catalogue"
+    },
+    "polyhaven/grass_medium_01": {
+      "id": "polyhaven/grass_medium_01",
+      "source": "polyhaven",
+      "type": "modele",
+      "titre": "Grass Medium 01",
+      "tags": [
+        "plant",
+        "grass",
+        "nature",
+        "green",
+        "shrub",
+        "outdoor",
+        "field",
+        "meadow",
+        "natural",
+        "foliage",
+        "small",
+        "botany",
+        "grass",
+        "nature",
+        "ground cover",
+        "collection: pine_forest"
+      ],
+      "style": "realiste",
+      "auteurs": [
+        "Rob Tuytel",
+        "Rico Cilliers"
+      ],
+      "url": "https://polyhaven.com/a/grass_medium_01",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://polyhaven.com/license",
+        "verifiee": true,
+        "preuve": "Toutes les ressources Poly Haven sont CC0 (polyhaven.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "format": "gltf",
+      "ph_type": "models",
+      "statut": "catalogue"
+    },
+    "polyhaven/tree_small_02": {
+      "id": "polyhaven/tree_small_02",
+      "source": "polyhaven",
+      "type": "modele",
+      "titre": "Tree Small 02",
+      "tags": [
+        "tree",
+        "natural",
+        "nature",
+        "plant",
+        "outdoor",
+        "green",
+        "botany",
+        "leaf",
+        "leaves",
+        "forest",
+        "jungle",
+        "foliage",
+        "geometry nodes",
+        "trunk",
+        "bark",
+        "medium",
+        "garden",
+        "branches",
+        "burkea africana",
+        "wild syringa",
+        "small",
+        "nature",
+        "plants",
+        "trees",
+        "collection: verdant_trail"
+      ],
+      "style": "realiste",
+      "auteurs": [
+        "Rico Cilliers"
+      ],
+      "url": "https://polyhaven.com/a/tree_small_02",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://polyhaven.com/license",
+        "verifiee": true,
+        "preuve": "Toutes les ressources Poly Haven sont CC0 (polyhaven.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "format": "gltf",
+      "ph_type": "models",
+      "statut": "catalogue"
+    },
+    "polyhaven/decorative_book_set_01": {
+      "id": "polyhaven/decorative_book_set_01",
+      "source": "polyhaven",
+      "type": "modele",
+      "titre": "Decorative Book Set 01",
+      "tags": [
+        "bookshelf",
+        "books",
+        "reading",
+        "library",
+        "collection",
+        "props",
+        "decorative",
+        "books"
+      ],
+      "style": "realiste",
+      "auteurs": [
+        "James Ray Cock"
+      ],
+      "url": "https://polyhaven.com/a/decorative_book_set_01",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://polyhaven.com/license",
+        "verifiee": true,
+        "preuve": "Toutes les ressources Poly Haven sont CC0 (polyhaven.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "format": "gltf",
+      "ph_type": "models",
+      "statut": "catalogue"
+    },
+    "polyhaven/book_encyclopedia_set_01": {
+      "id": "polyhaven/book_encyclopedia_set_01",
+      "source": "polyhaven",
+      "type": "modele",
+      "titre": "Book Encyclopedia Set 01",
+      "tags": [
+        "bookshelf",
+        "books",
+        "library",
+        "reading",
+        "encyclopedia",
+        "set",
+        "props",
+        "decorative",
+        "books"
+      ],
+      "style": "realiste",
+      "auteurs": [
+        "John Malcolm"
+      ],
+      "url": "https://polyhaven.com/a/book_encyclopedia_set_01",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://polyhaven.com/license",
+        "verifiee": true,
+        "preuve": "Toutes les ressources Poly Haven sont CC0 (polyhaven.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "format": "gltf",
+      "ph_type": "models",
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/bookcaseClosed": {
+      "id": "kenney/furniture-kit/bookcaseClosed",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "bookcaseClosed",
+      "tags": [
+        "bookcase",
+        "closed",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/bookcaseClosed.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/bookcaseClosedDoors": {
+      "id": "kenney/furniture-kit/bookcaseClosedDoors",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "bookcaseClosedDoors",
+      "tags": [
+        "bookcase",
+        "closed",
+        "doors",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/bookcaseClosedDoors.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/bookcaseClosedWide": {
+      "id": "kenney/furniture-kit/bookcaseClosedWide",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "bookcaseClosedWide",
+      "tags": [
+        "bookcase",
+        "closed",
+        "wide",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/bookcaseClosedWide.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/bookcaseOpen": {
+      "id": "kenney/furniture-kit/bookcaseOpen",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "bookcaseOpen",
+      "tags": [
+        "bookcase",
+        "open",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/bookcaseOpen.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/bookcaseOpenLow": {
+      "id": "kenney/furniture-kit/bookcaseOpenLow",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "bookcaseOpenLow",
+      "tags": [
+        "bookcase",
+        "open",
+        "low",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/bookcaseOpenLow.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/books": {
+      "id": "kenney/furniture-kit/books",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "books",
+      "tags": [
+        "books",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/books.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "valide",
+      "fichiers": [
+        "cache/assets/kenney/furniture-kit/books.glb"
+      ],
+      "sha": "a1269b9edbfbefc4",
+      "taille_ko": 6,
+      "telecharge_le": "2026-10-25 00:00:58",
+      "temps_telechargement_s": 0.7,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "objets": 1,
+          "maillages": 1,
+          "polygones": 62,
+          "materiaux": [
+            "carpetDarker",
+            "carpetWhite",
+            "metal",
+            "plant"
+          ],
+          "armatures": 0,
+          "dimensions_m": [
+            0.15,
+            0.094,
+            0.104
+          ]
+        },
+        "erreur": null,
+        "secondes": 1.12,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/kenney_furniture-kit_books.png",
+      "valide_par": "rendu bureau_holographique contrôlé"
+    },
+    "kenney/furniture-kit/chair": {
+      "id": "kenney/furniture-kit/chair",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "chair",
+      "tags": [
+        "chair",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/chair.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/chairCushion": {
+      "id": "kenney/furniture-kit/chairCushion",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "chairCushion",
+      "tags": [
+        "chair",
+        "cushion",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/chairCushion.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/chairDesk": {
+      "id": "kenney/furniture-kit/chairDesk",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "chairDesk",
+      "tags": [
+        "chair",
+        "desk",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/chairDesk.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "valide",
+      "fichiers": [
+        "cache/assets/kenney/furniture-kit/chairDesk.glb"
+      ],
+      "sha": "7fc48a45099b93e7",
+      "taille_ko": 38,
+      "telecharge_le": "2026-10-25 00:00:54",
+      "temps_telechargement_s": 0.6,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "objets": 2,
+          "maillages": 2,
+          "polygones": 588,
+          "materiaux": [
+            "carpet",
+            "metalMedium"
+          ],
+          "armatures": 0,
+          "dimensions_m": [
+            0.335,
+            0.314,
+            0.608
+          ]
+        },
+        "erreur": null,
+        "secondes": 1.01,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/kenney_furniture-kit_chairdesk.png",
+      "valide_par": "rendu bureau_holographique contrôlé"
+    },
+    "kenney/furniture-kit/chairModernCushion": {
+      "id": "kenney/furniture-kit/chairModernCushion",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "chairModernCushion",
+      "tags": [
+        "chair",
+        "modern",
+        "cushion",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/chairModernCushion.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/chairModernFrameCushion": {
+      "id": "kenney/furniture-kit/chairModernFrameCushion",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "chairModernFrameCushion",
+      "tags": [
+        "chair",
+        "modern",
+        "frame",
+        "cushion",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/chairModernFrameCushion.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/chairRounded": {
+      "id": "kenney/furniture-kit/chairRounded",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "chairRounded",
+      "tags": [
+        "chair",
+        "rounded",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/chairRounded.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/computerKeyboard": {
+      "id": "kenney/furniture-kit/computerKeyboard",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "computerKeyboard",
+      "tags": [
+        "computer",
+        "keyboard",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/computerKeyboard.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "valide",
+      "fichiers": [
+        "cache/assets/kenney/furniture-kit/computerKeyboard.glb"
+      ],
+      "sha": "947994b36018133c",
+      "taille_ko": 3,
+      "telecharge_le": "2026-10-25 00:00:55",
+      "temps_telechargement_s": 0.7,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "objets": 1,
+          "maillages": 1,
+          "polygones": 32,
+          "materiaux": [
+            "metalDark",
+            "metalMedium"
+          ],
+          "armatures": 0,
+          "dimensions_m": [
+            0.282,
+            0.118,
+            0.028
+          ]
+        },
+        "erreur": null,
+        "secondes": 0.9,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/kenney_furniture-kit_computerkeyboard.png",
+      "valide_par": "rendu bureau_holographique contrôlé"
+    },
+    "kenney/furniture-kit/computerMouse": {
+      "id": "kenney/furniture-kit/computerMouse",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "computerMouse",
+      "tags": [
+        "computer",
+        "mouse",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/computerMouse.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "valide",
+      "fichiers": [
+        "cache/assets/kenney/furniture-kit/computerMouse.glb"
+      ],
+      "sha": "926594ae8499c296",
+      "taille_ko": 5,
+      "telecharge_le": "2026-10-25 00:00:56",
+      "temps_telechargement_s": 0.7,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "objets": 1,
+          "maillages": 1,
+          "polygones": 71,
+          "materiaux": [
+            "metalDark"
+          ],
+          "armatures": 0,
+          "dimensions_m": [
+            0.05,
+            0.085,
+            0.024
+          ]
+        },
+        "erreur": null,
+        "secondes": 0.96,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/kenney_furniture-kit_computermouse.png",
+      "valide_par": "rendu bureau_holographique contrôlé"
+    },
+    "kenney/furniture-kit/computerScreen": {
+      "id": "kenney/furniture-kit/computerScreen",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "computerScreen",
+      "tags": [
+        "computer",
+        "screen",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/computerScreen.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "valide",
+      "fichiers": [
+        "cache/assets/kenney/furniture-kit/computerScreen.glb"
+      ],
+      "sha": "1eeed9e3318c9b3e",
+      "taille_ko": 6,
+      "telecharge_le": "2026-10-25 00:00:55",
+      "temps_telechargement_s": 0.5,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "objets": 1,
+          "maillages": 1,
+          "polygones": 72,
+          "materiaux": [
+            "metal",
+            "metalDark"
+          ],
+          "armatures": 0,
+          "dimensions_m": [
+            0.393,
+            0.104,
+            0.294
+          ]
+        },
+        "erreur": null,
+        "secondes": 1.04,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/kenney_furniture-kit_computerscreen.png",
+      "valide_par": "rendu bureau_holographique contrôlé"
+    },
+    "kenney/furniture-kit/desk": {
+      "id": "kenney/furniture-kit/desk",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "desk",
+      "tags": [
+        "desk",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/desk.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "valide",
+      "fichiers": [
+        "cache/assets/kenney/furniture-kit/desk.glb"
+      ],
+      "sha": "d87860d1a2347072",
+      "taille_ko": 14,
+      "telecharge_le": "2026-10-25 00:00:53",
+      "temps_telechargement_s": 0.7,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "objets": 2,
+          "maillages": 2,
+          "polygones": 198,
+          "materiaux": [
+            "metal",
+            "wood"
+          ],
+          "armatures": 0,
+          "dimensions_m": [
+            0.734,
+            0.392,
+            0.384
+          ]
+        },
+        "erreur": null,
+        "secondes": 1.01,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/kenney_furniture-kit_desk.png",
+      "valide_par": "rendu bureau_holographique contrôlé"
+    },
+    "kenney/furniture-kit/deskCorner": {
+      "id": "kenney/furniture-kit/deskCorner",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "deskCorner",
+      "tags": [
+        "desk",
+        "corner",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/deskCorner.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/lampRoundFloor": {
+      "id": "kenney/furniture-kit/lampRoundFloor",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "lampRoundFloor",
+      "tags": [
+        "lamp",
+        "round",
+        "floor",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/lampRoundFloor.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/lampRoundTable": {
+      "id": "kenney/furniture-kit/lampRoundTable",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "lampRoundTable",
+      "tags": [
+        "lamp",
+        "round",
+        "table",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/lampRoundTable.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "valide",
+      "fichiers": [
+        "cache/assets/kenney/furniture-kit/lampRoundTable.glb"
+      ],
+      "sha": "f5ff799322129a2a",
+      "taille_ko": 6,
+      "telecharge_le": "2026-10-25 00:00:56",
+      "temps_telechargement_s": 0.5,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "objets": 1,
+          "maillages": 1,
+          "polygones": 76,
+          "materiaux": [
+            "lamp",
+            "metal"
+          ],
+          "armatures": 0,
+          "dimensions_m": [
+            0.152,
+            0.176,
+            0.314
+          ]
+        },
+        "erreur": null,
+        "secondes": 0.98,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/kenney_furniture-kit_lamproundtable.png",
+      "valide_par": "rendu bureau_holographique contrôlé"
+    },
+    "kenney/furniture-kit/lampSquareCeiling": {
+      "id": "kenney/furniture-kit/lampSquareCeiling",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "lampSquareCeiling",
+      "tags": [
+        "lamp",
+        "square",
+        "ceiling",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/lampSquareCeiling.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/lampSquareFloor": {
+      "id": "kenney/furniture-kit/lampSquareFloor",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "lampSquareFloor",
+      "tags": [
+        "lamp",
+        "square",
+        "floor",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/lampSquareFloor.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/lampSquareTable": {
+      "id": "kenney/furniture-kit/lampSquareTable",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "lampSquareTable",
+      "tags": [
+        "lamp",
+        "square",
+        "table",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/lampSquareTable.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/lampWall": {
+      "id": "kenney/furniture-kit/lampWall",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "lampWall",
+      "tags": [
+        "lamp",
+        "wall",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/lampWall.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/laptop": {
+      "id": "kenney/furniture-kit/laptop",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "laptop",
+      "tags": [
+        "laptop",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/laptop.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/loungeChair": {
+      "id": "kenney/furniture-kit/loungeChair",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "loungeChair",
+      "tags": [
+        "lounge",
+        "chair",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/loungeChair.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/loungeChairRelax": {
+      "id": "kenney/furniture-kit/loungeChairRelax",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "loungeChairRelax",
+      "tags": [
+        "lounge",
+        "chair",
+        "relax",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/loungeChairRelax.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/loungeDesignChair": {
+      "id": "kenney/furniture-kit/loungeDesignChair",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "loungeDesignChair",
+      "tags": [
+        "lounge",
+        "design",
+        "chair",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/loungeDesignChair.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/plantSmall1": {
+      "id": "kenney/furniture-kit/plantSmall1",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "plantSmall1",
+      "tags": [
+        "plant",
+        "small",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/plantSmall1.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "valide",
+      "fichiers": [
+        "cache/assets/kenney/furniture-kit/plantSmall1.glb"
+      ],
+      "sha": "8d245bacff62b0ab",
+      "taille_ko": 8,
+      "telecharge_le": "2026-10-25 00:00:57",
+      "temps_telechargement_s": 0.7,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "objets": 1,
+          "maillages": 1,
+          "polygones": 102,
+          "materiaux": [
+            "plant",
+            "wood"
+          ],
+          "armatures": 0,
+          "dimensions_m": [
+            0.095,
+            0.095,
+            0.14
+          ]
+        },
+        "erreur": null,
+        "secondes": 1.0,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/kenney_furniture-kit_plantsmall1.png",
+      "valide_par": "rendu bureau_holographique contrôlé"
+    },
+    "kenney/furniture-kit/plantSmall2": {
+      "id": "kenney/furniture-kit/plantSmall2",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "plantSmall2",
+      "tags": [
+        "plant",
+        "small",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/plantSmall2.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/plantSmall3": {
+      "id": "kenney/furniture-kit/plantSmall3",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "plantSmall3",
+      "tags": [
+        "plant",
+        "small",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/plantSmall3.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "kenney/furniture-kit/pottedPlant": {
+      "id": "kenney/furniture-kit/pottedPlant",
+      "source": "kenney",
+      "type": "modele",
+      "titre": "pottedPlant",
+      "tags": [
+        "potted",
+        "plant",
+        "furniture-kit"
+      ],
+      "style": "low-poly",
+      "url": "https://kenney.nl/assets/furniture-kit",
+      "format": "glb",
+      "zip_chemin": "Models/GLTF format/pottedPlant.glb",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verifiee": true,
+        "preuve": "mention CC0 trouvée sur https://kenney.nl/assets/furniture-kit le 2026-10-25",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "ambientcg/Metal027": {
+      "id": "ambientcg/Metal027",
+      "source": "ambientcg",
+      "type": "materiau",
+      "titre": "Metal 027",
+      "tags": [
+        "27",
+        "black",
+        "covered",
+        "metal",
+        "painted",
+        "powder",
+        "steel"
+      ],
+      "style": "realiste",
+      "url": "https://ambientcg.com/view?id=Metal027",
+      "format": "jpg",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://docs.ambientcg.com/license/",
+        "verifiee": true,
+        "preuve": "Toutes les ressources ambientCG sont CC0 (docs.ambientcg.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "importe",
+      "fichiers": [
+        "cache/assets/ambientcg/Metal027/Metal027_1K-JPG_Color.jpg",
+        "cache/assets/ambientcg/Metal027/Metal027_1K-JPG_Displacement.jpg",
+        "cache/assets/ambientcg/Metal027/Metal027_1K-JPG_Metalness.jpg",
+        "cache/assets/ambientcg/Metal027/Metal027_1K-JPG_NormalDX.jpg",
+        "cache/assets/ambientcg/Metal027/Metal027_1K-JPG_NormalGL.jpg",
+        "cache/assets/ambientcg/Metal027/Metal027_1K-JPG_Roughness.jpg"
+      ],
+      "sha": "9c18e509d95c6445",
+      "taille_ko": 4857,
+      "telecharge_le": "2026-10-25 00:01:04",
+      "temps_telechargement_s": 2.0,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "textures": 3
+        },
+        "erreur": null,
+        "secondes": 0.92,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/ambientcg_metal027.png"
+    },
+    "ambientcg/Metal029": {
+      "id": "ambientcg/Metal029",
+      "source": "ambientcg",
+      "type": "materiau",
+      "titre": "Metal 029",
+      "tags": [
+        "29",
+        "black",
+        "covered",
+        "metal",
+        "painted",
+        "powder",
+        "steel"
+      ],
+      "style": "realiste",
+      "url": "https://ambientcg.com/view?id=Metal029",
+      "format": "jpg",
+      "licence": {
+        "nom": "CC0 1.0",
+        "url": "https://docs.ambientcg.com/license/",
+        "verifiee": true,
+        "preuve": "Toutes les ressources ambientCG sont CC0 (docs.ambientcg.com/license)",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "catalogue"
+    },
+    "cmu/02_01": {
+      "id": "cmu/02_01",
+      "source": "cmu_mocap",
+      "type": "mouvement",
+      "titre": "marche normale",
+      "mouvement": "marche",
+      "tags": [
+        "marche",
+        "mocap",
+        "humain"
+      ],
+      "style": "realiste",
+      "url": "http://mocap.cs.cmu.edu/search.php?subjectnumber=02",
+      "format": "bvh",
+      "licence": {
+        "nom": "Usage libre, y compris commercial ; revente des données brutes interdite",
+        "url": "http://mocap.cs.cmu.edu/faqs.php",
+        "verifiee": true,
+        "preuve": "Conditions de la FAQ CMU (usage libre, revente des données brutes interdite)",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "importe",
+      "provenance_fichier": "https://raw.githubusercontent.com/una-dinosauria/cmu-mocap/master/data/002/02_01.bvh",
+      "fichiers": [
+        "cache/assets/cmu/02_01.bvh"
+      ],
+      "sha": "bccd7bd20c09301a",
+      "taille_ko": 253,
+      "telecharge_le": "2026-10-25 00:00:58",
+      "temps_telechargement_s": 0.2,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "os": 31,
+          "noms_os": [
+            "Hips",
+            "LHipJoint",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RHipJoint",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "LowerBack",
+            "Spine",
+            "Spine1",
+            "Neck",
+            "Neck1",
+            "Head",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "LeftFingerBase",
+            "LeftHandIndex1",
+            "LThumb",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand",
+            "RightFingerBase",
+            "RightHandIndex1",
+            "RThumb"
+          ],
+          "images": 69
+        },
+        "erreur": null,
+        "secondes": 0.91,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/cmu_02_01.png",
+      "note": "Retargeting v1 : le rendu de contrôle montrait un mannequin figé (armature cachée pendant le transfert). Corrigé, à revalider."
+    },
+    "cmu/16_15": {
+      "id": "cmu/16_15",
+      "source": "cmu_mocap",
+      "type": "mouvement",
+      "titre": "marche lente",
+      "mouvement": "marche",
+      "tags": [
+        "marche",
+        "mocap",
+        "humain"
+      ],
+      "style": "realiste",
+      "url": "http://mocap.cs.cmu.edu/search.php?subjectnumber=16",
+      "format": "bvh",
+      "licence": {
+        "nom": "Usage libre, y compris commercial ; revente des données brutes interdite",
+        "url": "http://mocap.cs.cmu.edu/faqs.php",
+        "verifiee": true,
+        "preuve": "Conditions de la FAQ CMU (usage libre, revente des données brutes interdite)",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "importe",
+      "provenance_fichier": "https://raw.githubusercontent.com/una-dinosauria/cmu-mocap/master/data/016/16_15.bvh",
+      "fichiers": [
+        "cache/assets/cmu/16_15.bvh"
+      ],
+      "sha": "1cffc3f2793490cb",
+      "taille_ko": 345,
+      "telecharge_le": "2026-10-25 00:00:59",
+      "temps_telechargement_s": 0.3,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "os": 31,
+          "noms_os": [
+            "Hips",
+            "LHipJoint",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RHipJoint",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "LowerBack",
+            "Spine",
+            "Spine1",
+            "Neck",
+            "Neck1",
+            "Head",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "LeftFingerBase",
+            "LeftHandIndex1",
+            "LThumb",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand",
+            "RightFingerBase",
+            "RightHandIndex1",
+            "RThumb"
+          ],
+          "images": 95
+        },
+        "erreur": null,
+        "secondes": 0.95,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/cmu_16_15.png"
+    },
+    "cmu/143_19": {
+      "id": "cmu/143_19",
+      "source": "cmu_mocap",
+      "type": "mouvement",
+      "titre": "salue de la main",
+      "mouvement": "salut",
+      "tags": [
+        "salut",
+        "mocap",
+        "humain"
+      ],
+      "style": "realiste",
+      "url": "http://mocap.cs.cmu.edu/search.php?subjectnumber=143",
+      "format": "bvh",
+      "licence": {
+        "nom": "Usage libre, y compris commercial ; revente des données brutes interdite",
+        "url": "http://mocap.cs.cmu.edu/faqs.php",
+        "verifiee": true,
+        "preuve": "Conditions de la FAQ CMU (usage libre, revente des données brutes interdite)",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "importe",
+      "provenance_fichier": "https://raw.githubusercontent.com/una-dinosauria/cmu-mocap/master/data/143/143_19.bvh",
+      "fichiers": [
+        "cache/assets/cmu/143_19.bvh"
+      ],
+      "sha": "312b535719ddf618",
+      "taille_ko": 622,
+      "telecharge_le": "2026-10-25 00:00:59",
+      "temps_telechargement_s": 0.4,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "os": 31,
+          "noms_os": [
+            "Hips",
+            "LHipJoint",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RHipJoint",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "LowerBack",
+            "Spine",
+            "Spine1",
+            "Neck",
+            "Neck1",
+            "Head",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "LeftFingerBase",
+            "LeftHandIndex1",
+            "LThumb",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand",
+            "RightFingerBase",
+            "RightHandIndex1",
+            "RThumb"
+          ],
+          "images": 168
+        },
+        "erreur": null,
+        "secondes": 1.04,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/cmu_143_19.png"
+    },
+    "cmu/143_04": {
+      "id": "cmu/143_04",
+      "source": "cmu_mocap",
+      "type": "mouvement",
+      "titre": "parle avec les mains",
+      "mouvement": "geste",
+      "tags": [
+        "geste",
+        "mocap",
+        "humain"
+      ],
+      "style": "realiste",
+      "url": "http://mocap.cs.cmu.edu/search.php?subjectnumber=143",
+      "format": "bvh",
+      "licence": {
+        "nom": "Usage libre, y compris commercial ; revente des données brutes interdite",
+        "url": "http://mocap.cs.cmu.edu/faqs.php",
+        "verifiee": true,
+        "preuve": "Conditions de la FAQ CMU (usage libre, revente des données brutes interdite)",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "importe",
+      "provenance_fichier": "https://raw.githubusercontent.com/una-dinosauria/cmu-mocap/master/data/143/143_04.bvh",
+      "fichiers": [
+        "cache/assets/cmu/143_04.bvh"
+      ],
+      "sha": "c6790cae6f8c3da0",
+      "taille_ko": 808,
+      "telecharge_le": "2026-10-25 00:00:59",
+      "temps_telechargement_s": 0.4,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "os": 31,
+          "noms_os": [
+            "Hips",
+            "LHipJoint",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RHipJoint",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "LowerBack",
+            "Spine",
+            "Spine1",
+            "Neck",
+            "Neck1",
+            "Head",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "LeftFingerBase",
+            "LeftHandIndex1",
+            "LThumb",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand",
+            "RightFingerBase",
+            "RightHandIndex1",
+            "RThumb"
+          ],
+          "images": 217
+        },
+        "erreur": null,
+        "secondes": 1.1,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/cmu_143_04.png"
+    },
+    "cmu/13_29": {
+      "id": "cmu/13_29",
+      "source": "cmu_mocap",
+      "type": "mouvement",
+      "titre": "attend, regarde autour",
+      "mouvement": "attente",
+      "tags": [
+        "attente",
+        "mocap",
+        "humain"
+      ],
+      "style": "realiste",
+      "url": "http://mocap.cs.cmu.edu/search.php?subjectnumber=13",
+      "format": "bvh",
+      "licence": {
+        "nom": "Usage libre, y compris commercial ; revente des données brutes interdite",
+        "url": "http://mocap.cs.cmu.edu/faqs.php",
+        "verifiee": true,
+        "preuve": "Conditions de la FAQ CMU (usage libre, revente des données brutes interdite)",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "importe",
+      "provenance_fichier": "https://raw.githubusercontent.com/una-dinosauria/cmu-mocap/master/data/013/13_29.bvh",
+      "fichiers": [
+        "cache/assets/cmu/13_29.bvh"
+      ],
+      "sha": "ce0b13adfa10f530",
+      "taille_ko": 3369,
+      "telecharge_le": "2026-10-25 00:01:00",
+      "temps_telechargement_s": 0.4,
+      "tests": {
+        "import_blender": true,
+        "blender": "4.2.3 LTS",
+        "stats": {
+          "os": 31,
+          "noms_os": [
+            "Hips",
+            "LHipJoint",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RHipJoint",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "LowerBack",
+            "Spine",
+            "Spine1",
+            "Neck",
+            "Neck1",
+            "Head",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "LeftFingerBase",
+            "LeftHandIndex1",
+            "LThumb",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand",
+            "RightFingerBase",
+            "RightHandIndex1",
+            "RThumb"
+          ],
+          "images": 919
+        },
+        "erreur": null,
+        "secondes": 1.81,
+        "le": "2026-10-25 00:01"
+      },
+      "apercu": "assets/apercus/cmu_13_29.png"
+    },
+    "rhubarb/linux": {
+      "id": "rhubarb/linux",
+      "source": "rhubarb",
+      "type": "outil_levres",
+      "titre": "Rhubarb Lip Sync (Linux)",
+      "tags": [
+        "levres",
+        "visemes",
+        "audio"
+      ],
+      "url": "https://github.com/DanielSWolf/rhubarb-lip-sync",
+      "format": "binaire",
+      "licence": {
+        "nom": "MIT",
+        "url": "https://github.com/DanielSWolf/rhubarb-lip-sync/blob/master/LICENSE.md",
+        "verifiee": true,
+        "preuve": "fichier LICENSE.md du paquet officiel : licence MIT",
+        "verifiee_le": "2026-10-25"
+      },
+      "statut": "importe",
+      "version": "v1.14.0",
+      "fichiers": [
+        "cache/assets/rhubarb/Rhubarb-Lip-Sync-1.14.0-Linux/rhubarb"
+      ],
+      "sha": "ce7b4b87d66ac606",
+      "taille_ko": 7159,
+      "telecharge_le": "2026-10-25 00:01:02",
+      "temps_telechargement_s": 2.5,
+      "tests": {
+        "execution": true,
+        "sortie": "scenes/medias/arthemis_s06.rhubarb.json",
+        "erreur": null
+      }
+    }
+  },
+  "maj": "2026-10-25 00:12:58"
+}

@@ -18,9 +18,15 @@ META = {"nom": "retarget_cmu", "duree_s": 4, "fps": 24, "personnages": ["mira"],
 def construire(meta):
     P = mannequin_holo(palette="mira", aretes=False)
     objs = import_assets.importer(os.path.join(RACINE, SEL["fichier"]))
-    arm = next(o for o in objs if o.type == "ARMATURE"); arm.hide_render = True; arm.hide_viewport = True
-    n = retarget.appliquer(arm, P, nb_images=int(meta["duree_s"] * meta["fps"]), en_place=True)
-    print("images retargetées :", n)
+    arm = next(o for o in objs if o.type == "ARMATURE")
+    # l'armature doit rester visible PENDANT le transfert (un objet caché n'est pas évalué) ; on évite la 1re image (pose en T)
+    n = retarget.appliquer(arm, P, debut_bvh=int(arm.animation_data.action.frame_range[0]) + 2,
+                           nb_images=int(meta["duree_s"] * meta["fps"]), en_place=True)
+    arm.hide_render = True; arm.hide_viewport = True
+    amp = retarget.amplitude_mouvement(P)
+    print("images retargetées :", n, "amplitude (degrés) :", amp)
+    if max(amp.values()) < 5:
+        raise RuntimeError(f"retargeting sans mouvement visible : amplitudes {amp}")
     environnements.socle_holo(PALETTES["mira"]["principal"], hauteur=0.29)
     cam, cible = cameras.creer(focale=40, cible_loc=(0, 0, 1.15))
     cameras.arc(cam, meta["duree_s"], meta["fps"], de_deg=-25, a_deg=10, distance=(4.0, 3.6))
