@@ -1,0 +1,22 @@
+{
+  "fichier": "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/cache/assets/kenney/furniture-kit/desk.glb",
+  "type": "modele",
+  "ok": true,
+  "blender": "4.2.3 LTS",
+  "stats": {
+    "objets": 2,
+    "maillages": 2,
+    "polygones": 198,
+    "materiaux": [
+      "metal",
+      "wood"
+    ],
+    "armatures": 0,
+    "dimensions_m": [
+      0.734,
+      0.392,
+      0.384
+    ]
+  },
+  "secondes": 1.01
+}

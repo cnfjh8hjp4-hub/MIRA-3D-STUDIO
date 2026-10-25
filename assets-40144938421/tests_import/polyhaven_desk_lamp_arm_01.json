@@ -1,0 +1,22 @@
+{
+  "fichier": "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/cache/assets/polyhaven/desk_lamp_arm_01/desk_lamp_arm_01_1k.gltf",
+  "type": "modele",
+  "ok": true,
+  "blender": "4.2.3 LTS",
+  "stats": {
+    "objets": 1,
+    "maillages": 1,
+    "polygones": 24102,
+    "materiaux": [
+      "desk_lamp_arm_01",
+      "desk_lamp_arm_01_light"
+    ],
+    "armatures": 0,
+    "dimensions_m": [
+      0.202,
+      0.614,
+      0.893
+    ]
+  },
+  "secondes": 0.94
+}

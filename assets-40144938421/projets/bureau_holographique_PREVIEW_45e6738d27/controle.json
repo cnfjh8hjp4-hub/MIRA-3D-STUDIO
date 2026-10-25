@@ -1,0 +1,107 @@
+{
+  "valide": true,
+  "defauts": [],
+  "inspection": {
+    "blender": "4.2.3 LTS",
+    "moteurs_disponibles": [
+      "BLENDER_EEVEE_NEXT"
+    ],
+    "meta": {
+      "nom": "bureau_holographique",
+      "duree_s": 5,
+      "fps": 24,
+      "personnages": [],
+      "audio": null,
+      "fond": "#04121a",
+      "format": "9:16",
+      "assets": [
+        "kenney/furniture-kit/desk",
+        "kenney/furniture-kit/chairDesk",
+        "kenney/furniture-kit/computerScreen",
+        "kenney/furniture-kit/computerKeyboard",
+        "kenney/furniture-kit/computerMouse",
+        "kenney/furniture-kit/lampRoundTable",
+        "kenney/furniture-kit/plantSmall1",
+        "kenney/furniture-kit/books",
+        "polyhaven/moonless_golf"
+      ]
+    },
+    "camera": "camera",
+    "resolution": [
+      360,
+      640
+    ],
+    "fps": 24,
+    "timeline": [
+      1,
+      120
+    ],
+    "duree_s": 5.0,
+    "objets": {
+      "MESH": 16,
+      "CAMERA": 1,
+      "EMPTY": 9,
+      "LIGHT": 3
+    },
+    "materiaux": 25,
+    "geometry_nodes": 15,
+    "ressources_manquantes": [],
+    "audio": [],
+    "cadrage": [
+      {
+        "image": 1,
+        "objets_dans_le_champ": 15,
+        "objets": 15
+      },
+      {
+        "image": 60,
+        "objets_dans_le_champ": 15,
+        "objets": 15
+      },
+      {
+        "image": 120,
+        "objets_dans_le_champ": 14,
+        "objets": 15
+      }
+    ],
+    "moteur": "CYCLES"
+  },
+  "images_tests": [
+    "test_0001.png",
+    "test_0060.png",
+    "test_0120.png"
+  ],
+  "analyses": [
+    {
+      "image": "test_0001.png",
+      "luminance_moyenne": 71.53,
+      "contraste": 66.0,
+      "part_noir": 0.0,
+      "part_blanc_brule": 0.0012,
+      "ecart_fond": 0.0
+    },
+    {
+      "image": "test_0060.png",
+      "luminance_moyenne": 77.22,
+      "contraste": 68.68,
+      "part_noir": 0.0,
+      "part_blanc_brule": 0.0017,
+      "ecart_fond": 1.0
+    },
+    {
+      "image": "test_0120.png",
+      "luminance_moyenne": 75.67,
+      "contraste": 67.85,
+      "part_noir": 0.0,
+      "part_blanc_brule": 0.0014,
+      "ecart_fond": 0.0
+    }
+  ],
+  "temps_images_tests_s": [
+    4.05,
+    3.749,
+    3.848
+  ],
+  "comparaison_references": {},
+  "journal": "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/sorties/projets/bureau_holographique_PREVIEW_45e6738d27/controle/controle.log"
+}

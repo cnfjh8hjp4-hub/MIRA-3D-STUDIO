@@ -1,0 +1,22 @@
+{
+  "fichier": "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/cache/assets/kenney/furniture-kit/plantSmall1.glb",
+  "type": "modele",
+  "ok": true,
+  "blender": "4.2.3 LTS",
+  "stats": {
+    "objets": 1,
+    "maillages": 1,
+    "polygones": 102,
+    "materiaux": [
+      "plant",
+      "wood"
+    ],
+    "armatures": 0,
+    "dimensions_m": [
+      0.095,
+      0.095,
+      0.14
+    ]
+  },
+  "secondes": 1.0
+}

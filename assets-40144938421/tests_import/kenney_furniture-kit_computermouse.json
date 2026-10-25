@@ -1,0 +1,21 @@
+{
+  "fichier": "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/cache/assets/kenney/furniture-kit/computerMouse.glb",
+  "type": "modele",
+  "ok": true,
+  "blender": "4.2.3 LTS",
+  "stats": {
+    "objets": 1,
+    "maillages": 1,
+    "polygones": 71,
+    "materiaux": [
+      "metalDark"
+    ],
+    "armatures": 0,
+    "dimensions_m": [
+      0.05,
+      0.085,
+      0.024
+    ]
+  },
+  "secondes": 0.96
+}

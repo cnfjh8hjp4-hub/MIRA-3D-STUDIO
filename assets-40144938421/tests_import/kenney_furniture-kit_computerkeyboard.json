@@ -1,0 +1,22 @@
+{
+  "fichier": "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/cache/assets/kenney/furniture-kit/computerKeyboard.glb",
+  "type": "modele",
+  "ok": true,
+  "blender": "4.2.3 LTS",
+  "stats": {
+    "objets": 1,
+    "maillages": 1,
+    "polygones": 32,
+    "materiaux": [
+      "metalDark",
+      "metalMedium"
+    ],
+    "armatures": 0,
+    "dimensions_m": [
+      0.282,
+      0.118,
+      0.028
+    ]
+  },
+  "secondes": 0.9
+}

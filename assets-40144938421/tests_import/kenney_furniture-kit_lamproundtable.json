@@ -1,0 +1,22 @@
+{
+  "fichier": "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/cache/assets/kenney/furniture-kit/lampRoundTable.glb",
+  "type": "modele",
+  "ok": true,
+  "blender": "4.2.3 LTS",
+  "stats": {
+    "objets": 1,
+    "maillages": 1,
+    "polygones": 76,
+    "materiaux": [
+      "lamp",
+      "metal"
+    ],
+    "armatures": 0,
+    "dimensions_m": [
+      0.152,
+      0.176,
+      0.314
+    ]
+  },
+  "secondes": 0.98
+}

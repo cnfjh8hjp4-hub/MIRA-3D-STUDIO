@@ -1,0 +1,24 @@
+{
+  "fichier": "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/cache/assets/kenney/furniture-kit/books.glb",
+  "type": "modele",
+  "ok": true,
+  "blender": "4.2.3 LTS",
+  "stats": {
+    "objets": 1,
+    "maillages": 1,
+    "polygones": 62,
+    "materiaux": [
+      "carpetDarker",
+      "carpetWhite",
+      "metal",
+      "plant"
+    ],
+    "armatures": 0,
+    "dimensions_m": [
+      0.15,
+      0.094,
+      0.104
+    ]
+  },
+  "secondes": 1.12
+}

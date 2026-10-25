@@ -1,0 +1,21 @@
+{
+  "fichier": "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/cache/assets/polyhaven/WoodenTable_01/WoodenTable_01_1k.gltf",
+  "type": "modele",
+  "ok": true,
+  "blender": "4.2.3 LTS",
+  "stats": {
+    "objets": 1,
+    "maillages": 1,
+    "polygones": 952,
+    "materiaux": [
+      "WoodenTable_01"
+    ],
+    "armatures": 0,
+    "dimensions_m": [
+      1.8,
+      0.657,
+      0.549
+    ]
+  },
+  "secondes": 0.94
+}
