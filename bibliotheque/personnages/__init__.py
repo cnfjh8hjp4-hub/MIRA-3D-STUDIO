@@ -4,7 +4,8 @@ from .mannequin_holo import construire as mannequin_holo
 
 REGISTRE = {
     "mannequin_holo": {"construire": mannequin_holo, "palette": "mira", "etat": "prêt (démo, primitives)"},
-    "arthemis": {"construire": None, "palette": "arthemis",
-                 "etat": "à construire pièce par pièce (corps, tête, yeux, paupières, bec, aigrettes, ailes)"},
-    "mira": {"construire": None, "palette": "mira", "etat": "à construire depuis la planche de référence"},
+    "arthemis": {"construire": "arthemis.construire", "palette": "arthemis",
+                 "etat": "construite pièce par pièce d'après sa planche (yeux, paupières, bec articulé, ailes) : itérations en cours"},
+    "mira": {"construire": "mira_hologramme.construire", "palette": "mira",
+             "etat": "modèle TRELLIS (MIT) généré depuis son image officielle : À VALIDER par le propriétaire"},
 }
