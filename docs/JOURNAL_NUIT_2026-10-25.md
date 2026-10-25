@@ -17,7 +17,7 @@ yeux = zones claires sous les sourcils, bec = pointe la plus avancée. Bug corri
 |---|---|---|
 | mannequin (démo) | STANDARD 26,1 min | personnage générique, pas Mira |
 | TRELLIS (MIT) depuis son image officielle | STANDARD 78 min (estimé 78,7) | reconnaissable de loin ; visage grossier en 720p ; ombrage du haut ambigu |
-| v2 | haut uniformisé, pantalon sombre, cadrage moins serré | en cours de rendu |
+| v2 | haut uniformisé, pantalon sombre, cadrage moins serré | STANDARD 80,4 min (estimé 79,8) ; il reste un ombrage au creux du haut venant de la géométrie : à valider, pas à publier |
 
 ## Ce qui manque pour atteindre le niveau Kling
 1. **Des modèles 3D propres des personnages** : les modèles automatiques (TRELLIS) sont simplifiés (≈ 6 000 sommets pour Mira, visage flou).
