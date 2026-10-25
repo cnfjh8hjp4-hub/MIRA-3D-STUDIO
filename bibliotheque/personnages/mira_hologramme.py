@@ -30,10 +30,15 @@ def _materiau(img, hauteur, pal=PAL, plancher="#1a8fb0", nom="mira_holo", buste_
     bande = N.new("ShaderNodeMapRange"); bande.interpolation_type = "SMOOTHSTEP"
     bande.inputs["From Min"].default_value = hauteur * 0.80; bande.inputs["From Max"].default_value = hauteur * 0.84
     bande.inputs["To Min"].default_value = 1.0; bande.inputs["To Max"].default_value = 0.0; L.new(sepz.outputs["Z"], bande.inputs["Value"])
+    bas = N.new("ShaderNodeMapRange"); bas.interpolation_type = "SMOOTHSTEP"  # le pantalon garde sa couleur sombre
+    bas.inputs["From Min"].default_value = hauteur * 0.55; bas.inputs["From Max"].default_value = hauteur * 0.58
+    L.new(sepz.outputs["Z"], bas.inputs["Value"])
+    masque = N.new("ShaderNodeMath"); masque.operation = "MULTIPLY"
+    L.new(bande.outputs["Result"], masque.inputs[0]); L.new(bas.outputs["Result"], masque.inputs[1])
     uni = N.new("ShaderNodeMix"); uni.data_type = "FLOAT"; uni.inputs["B"].default_value = 0.55
     if not buste_uniforme:
-        bande.inputs["To Min"].default_value = 0.0
-    L.new(bande.outputs["Result"], uni.inputs["Factor"]); L.new(bw.outputs["Val"], uni.inputs["A"])
+        masque.inputs[1].default_value = 0.0; L.remove(masque.inputs[1].links[0])
+    L.new(masque.outputs[0], uni.inputs["Factor"]); L.new(bw.outputs["Val"], uni.inputs["A"])
     L.new(uni.outputs["Result"], ramp.inputs["Fac"])
     lw = N.new("ShaderNodeLayerWeight"); lw.inputs["Blend"].default_value = 0.4
     rim = N.new("ShaderNodeMath"); rim.operation = "POWER"; rim.inputs[1].default_value = 2.0; L.new(lw.outputs["Facing"], rim.inputs[0])
