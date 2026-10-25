@@ -1,0 +1,47 @@
+name: Générer un modèle 3D (TRELLIS, gratuit)
+
+on:
+  workflow_dispatch:
+    inputs:
+      image:
+        description: "Image dans assets/personnages/sources/ (ex. mira_face.png)"
+        default: "mira_face.png"
+      nom:
+        description: "Nom du modèle produit (ex. mira_trellis)"
+        default: "mira_trellis"
+      graine:
+        default: "0"
+
+permissions:
+  contents: write
+
+jobs:
+  generer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Générer
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          IMAGE: ${{ inputs.image }}
+          NOM: ${{ inputs.nom }}
+          GRAINE: ${{ inputs.graine }}
+        run: |
+          case "$IMAGE$NOM$GRAINE" in */*|*..*|*" "*) echo "paramètre invalide"; exit 1;; esac
+          pip install -q gradio_client
+          mkdir -p livraison
+          python3 scripts/generer_3d.py "assets/personnages/sources/$IMAGE" "livraison/$NOM.glb" "$GRAINE"
+      - name: Publier sur la branche « resultats »
+        if: always()
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          D=/tmp/pub; mkdir -p $D/modele-${{ github.run_id }}; cp -r livraison/. $D/modele-${{ github.run_id }}/ 2>/dev/null || true
+          cd $D && git init -q -b resultats
+          git config user.name "mira-3d-studio"; git config user.email "studio@users.noreply.github.com"
+          U="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          git fetch -q "$U" resultats 2>/dev/null && git reset -q --mixed FETCH_HEAD || true
+          git add modele-${{ github.run_id }} && git commit -qm "Modèle 3D ${{ inputs.nom }}" || exit 0
+          for i in 1 2 3 4 5; do git push -q "$U" resultats && break; sleep $((i*5)); git fetch -q "$U" resultats && git rebase -q FETCH_HEAD || true; done
