@@ -23,6 +23,10 @@ on:
       budget:
         description: "Budget sans accord, en minutes"
         default: "20"
+      controle_seul:
+        description: "Seulement le contrôle qualité (3 images tests, pas de vidéo)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write   # uniquement pour publier les résultats sur la branche « resultats »
@@ -65,7 +69,14 @@ jobs:
         run: |
           case "$SCENE" in */*|*..*) echo "nom de scène invalide"; exit 1;; esac
           extra=""; [ "$ACCORD" = "true" ] && extra="--accord"
-          code=0; ./studio produire "scenes/$SCENE" --profil "$PROFIL" --budget "$BUDGET" $extra || code=$?
+          code=0
+          if [ "${{ inputs.controle_seul }}" = "true" ]; then
+            ./studio inspecter "scenes/$SCENE" --profil "$PROFIL" || code=$?
+            mkdir -p sorties/projets/controle && cp -r sorties/controles/*/. sorties/projets/controle/ 2>/dev/null || true
+            mkdir -p sorties/projets/controle/controle && cp sorties/projets/controle/*.png sorties/projets/controle/*.json sorties/projets/controle/controle/ 2>/dev/null || true
+            exit $code
+          fi
+          ./studio produire "scenes/$SCENE" --profil "$PROFIL" --budget "$BUDGET" $extra || code=$?
           cat rapports/dernier_rendu.md >> "$GITHUB_STEP_SUMMARY" || true
           if [ "$code" = "3" ]; then echo "::warning::Accord requis : estimation au-dessus du budget. Relance en cochant « accord »."; exit 0; fi
           exit $code
