@@ -1,0 +1,34 @@
+{
+  "cpu": {
+    "coeurs": 4,
+    "modele": "AMD EPYC 7763 64-Core Processor"
+  },
+  "ram_go": 15.6,
+  "gpu": [],
+  "machine": "runnervmr9t6g",
+  "blender": {
+    "chemin": "/usr/local/bin/blender",
+    "version": "Blender 4.2.3 LTS"
+  },
+  "moteurs": {
+    "cycles": {
+      "ok": true,
+      "secondes": 0.21,
+      "prefixe": [],
+      "gpu": [],
+      "code": 0
+    },
+    "eevee": {
+      "ok": true,
+      "secondes": 22.25,
+      "prefixe": [],
+      "gpu": [],
+      "code": 0
+    }
+  },
+  "moteurs_ok": [
+    "cycles",
+    "eevee"
+  ],
+  "cle": "runnervmr9t6g|Blender 4.2.3 LTS|4|0"
+}

@@ -1,0 +1,16 @@
+{
+  "largeur": 360,
+  "hauteur": 640,
+  "echantillons": 8,
+  "rebonds": 2,
+  "rebonds_reflets": 1,
+  "rebonds_transparence": 8,
+  "debruitage": true,
+  "seuil_adaptatif": 0.05,
+  "qualite_glow": "LOW",
+  "moteur": "cycles",
+  "profil": "PREVIEW",
+  "appareil": "CPU",
+  "prefixe": [],
+  "accord_requis": false
+}

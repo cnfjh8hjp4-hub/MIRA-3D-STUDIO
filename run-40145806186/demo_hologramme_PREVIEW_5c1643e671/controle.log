@@ -1,0 +1,91 @@
+
+$ /usr/local/bin/blender -b --factory-startup -P /home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/scenes/demo_hologramme.py -- --mode inspection --profil-json /home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/sorties/projets/demo_hologramme_PREVIEW_5c1643e671/controle/profil.json --sortie /home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/sorties/projets/demo_hologramme_PREVIEW_5c1643e671/controle
+MIRA3D_INSPECTION_OK
+Blender 4.2.3 LTS (hash 0e22e4fcea03 built 2024-10-14 23:31:34)
+
+Blender quit
+
+$ /usr/local/bin/blender -b --factory-startup -P /home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/scenes/demo_hologramme.py -- --mode images --profil-json /home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/sorties/projets/demo_hologramme_PREVIEW_5c1643e671/controle/profil.json --sortie /home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/sorties/projets/demo_hologramme_PREVIEW_5c1643e671/controle --frames 1,60,120
+EGL Error (0x3009): EGL_BAD_MATCH: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+Blender 4.2.3 LTS (hash 0e22e4fcea03 built 2024-10-14 23:31:34)
+Fra:1 Mem:62.84M (Peak 65.67M) | Time:00:08.17 | Rendering 1 / 16 samples
+Fra:1 Mem:62.84M (Peak 65.67M) | Time:00:21.33 | Rendering 16 / 16 samples
+Fra:1 Mem:30.91M (Peak 66.36M) | Time:00:21.34 | Compositing
+Fra:1 Mem:30.91M (Peak 66.36M) | Time:00:21.34 | Compositing | Initializing execution
+Fra:1 Mem:30.92M (Peak 66.36M) | Time:00:21.34 | Compositing | Operation 2-19
+Fra:1 Mem:30.92M (Peak 66.36M) | Time:00:21.34 | Compositing | Operation 3-19
+Fra:1 Mem:34.50M (Peak 66.36M) | Time:00:21.34 | Compositing | Operation 4-19
+Fra:1 Mem:34.50M (Peak 66.36M) | Time:00:21.34 | Compositing | Operation 5-19
+Fra:1 Mem:34.50M (Peak 66.36M) | Time:00:21.34 | Compositing | Operation 6-19
+Fra:1 Mem:34.72M (Peak 66.36M) | Time:00:21.34 | Compositing | Operation 7-19
+Fra:1 Mem:34.72M (Peak 66.36M) | Time:00:21.34 | Compositing | Operation 8-19
+Fra:1 Mem:34.72M (Peak 66.36M) | Time:00:21.34 | Compositing | Operation 9-19
+Fra:1 Mem:34.72M (Peak 66.36M) | Time:00:21.34 | Compositing | Operation 10-19
+Fra:1 Mem:34.72M (Peak 66.36M) | Time:00:21.34 | Compositing | Operation 11-19
+Fra:1 Mem:34.72M (Peak 66.36M) | Time:00:21.35 | Compositing | Operation 12-19
+Fra:1 Mem:34.72M (Peak 66.36M) | Time:00:21.35 | Compositing | Operation 13-19
+Fra:1 Mem:34.72M (Peak 66.36M) | Time:00:21.35 | Compositing | Operation 14-19
+Fra:1 Mem:38.02M (Peak 66.36M) | Time:00:21.35 | Compositing | Operation 15-19
+Fra:1 Mem:38.02M (Peak 66.36M) | Time:00:21.35 | Compositing | Operation 16-19
+Fra:1 Mem:38.02M (Peak 66.36M) | Time:00:21.35 | Compositing | Operation 17-19
+Fra:1 Mem:38.02M (Peak 66.36M) | Time:00:21.35 | Compositing | Operation 18-19
+Fra:1 Mem:34.50M (Peak 66.36M) | Time:00:21.35 | Compositing | Operation 19-19
+Fra:1 Mem:34.50M (Peak 66.36M) | Time:00:21.35 | Compositing | Operation 20-19
+Saved: '/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/sorties/projets/demo_hologramme_PREVIEW_5c1643e671/controle/test_0001.png'
+Time: 00:21.38 (Saving: 00:00.02)
+
+Fra:60 Mem:62.84M (Peak 65.75M) | Time:00:01.40 | Rendering 1 / 16 samples
+Fra:60 Mem:62.84M (Peak 65.75M) | Time:00:14.14 | Rendering 16 / 16 samples
+Fra:60 Mem:30.91M (Peak 66.36M) | Time:00:14.15 | Compositing
+Fra:60 Mem:30.91M (Peak 66.36M) | Time:00:14.15 | Compositing | Initializing execution
+Fra:60 Mem:30.92M (Peak 66.36M) | Time:00:14.15 | Compositing | Operation 2-19
+Fra:60 Mem:30.92M (Peak 66.36M) | Time:00:14.15 | Compositing | Operation 3-19
+Fra:60 Mem:34.50M (Peak 66.36M) | Time:00:14.15 | Compositing | Operation 4-19
+Fra:60 Mem:34.50M (Peak 66.36M) | Time:00:14.15 | Compositing | Operation 5-19
+Fra:60 Mem:34.50M (Peak 66.36M) | Time:00:14.15 | Compositing | Operation 6-19
+Fra:60 Mem:34.72M (Peak 66.36M) | Time:00:14.15 | Compositing | Operation 7-19
+Fra:60 Mem:34.72M (Peak 66.36M) | Time:00:14.15 | Compositing | Operation 8-19
+Fra:60 Mem:34.72M (Peak 66.36M) | Time:00:14.15 | Compositing | Operation 9-19
+Fra:60 Mem:34.72M (Peak 66.36M) | Time:00:14.15 | Compositing | Operation 10-19
+Fra:60 Mem:34.72M (Peak 66.36M) | Time:00:14.15 | Compositing | Operation 11-19
+Fra:60 Mem:34.72M (Peak 66.36M) | Time:00:14.15 | Compositing | Operation 12-19
+Fra:60 Mem:34.72M (Peak 66.36M) | Time:00:14.15 | Compositing | Operation 13-19
+Fra:60 Mem:34.72M (Peak 66.36M) | Time:00:14.15 | Compositing | Operation 14-19
+Fra:60 Mem:38.02M (Peak 66.36M) | Time:00:14.16 | Compositing | Operation 15-19
+Fra:60 Mem:38.02M (Peak 66.36M) | Time:00:14.16 | Compositing | Operation 16-19
+Fra:60 Mem:38.02M (Peak 66.36M) | Time:00:14.16 | Compositing | Operation 17-19
+Fra:60 Mem:38.02M (Peak 66.36M) | Time:00:14.16 | Compositing | Operation 18-19
+Fra:60 Mem:34.50M (Peak 66.36M) | Time:00:14.16 | Compositing | Operation 19-19
+Fra:60 Mem:34.50M (Peak 66.36M) | Time:00:14.16 | Compositing | Operation 20-19
+Saved: '/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/sorties/projets/demo_hologramme_PREVIEW_5c1643e671/controle/test_0060.png'
+Time: 00:14.18 (Saving: 00:00.02)
+
+Fra:120 Mem:62.84M (Peak 65.75M) | Time:00:01.39 | Rendering 1 / 16 samples
+Fra:120 Mem:62.84M (Peak 65.75M) | Time:00:13.98 | Rendering 16 / 16 samples
+Fra:120 Mem:30.91M (Peak 66.36M) | Time:00:13.99 | Compositing
+Fra:120 Mem:30.91M (Peak 66.36M) | Time:00:13.99 | Compositing | Initializing execution
+Fra:120 Mem:30.92M (Peak 66.36M) | Time:00:13.99 | Compositing | Operation 2-19
+Fra:120 Mem:30.92M (Peak 66.36M) | Time:00:13.99 | Compositing | Operation 3-19
+Fra:120 Mem:34.50M (Peak 66.36M) | Time:00:13.99 | Compositing | Operation 4-19
+Fra:120 Mem:34.50M (Peak 66.36M) | Time:00:13.99 | Compositing | Operation 5-19
+Fra:120 Mem:34.50M (Peak 66.36M) | Time:00:13.99 | Compositing | Operation 6-19
+Fra:120 Mem:34.72M (Peak 66.36M) | Time:00:13.99 | Compositing | Operation 7-19
+Fra:120 Mem:34.72M (Peak 66.36M) | Time:00:13.99 | Compositing | Operation 8-19
+Fra:120 Mem:34.72M (Peak 66.36M) | Time:00:13.99 | Compositing | Operation 9-19
+Fra:120 Mem:34.72M (Peak 66.36M) | Time:00:13.99 | Compositing | Operation 10-19
+Fra:120 Mem:34.72M (Peak 66.36M) | Time:00:13.99 | Compositing | Operation 11-19
+Fra:120 Mem:34.72M (Peak 66.36M) | Time:00:13.99 | Compositing | Operation 12-19
+Fra:120 Mem:34.72M (Peak 66.36M) | Time:00:13.99 | Compositing | Operation 13-19
+Fra:120 Mem:34.72M (Peak 66.36M) | Time:00:13.99 | Compositing | Operation 14-19
+Fra:120 Mem:38.02M (Peak 66.36M) | Time:00:14.00 | Compositing | Operation 15-19
+Fra:120 Mem:38.02M (Peak 66.36M) | Time:00:14.00 | Compositing | Operation 16-19
+Fra:120 Mem:38.02M (Peak 66.36M) | Time:00:14.00 | Compositing | Operation 17-19
+Fra:120 Mem:38.02M (Peak 66.36M) | Time:00:14.00 | Compositing | Operation 18-19
+Fra:120 Mem:34.50M (Peak 66.36M) | Time:00:14.00 | Compositing | Operation 19-19
+Fra:120 Mem:34.50M (Peak 66.36M) | Time:00:14.00 | Compositing | Operation 20-19
+Saved: '/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/sorties/projets/demo_hologramme_PREVIEW_5c1643e671/controle/test_0120.png'
+Time: 00:14.03 (Saving: 00:00.02)
+
+MIRA3D_RENDU_OK
+
+Blender quit
