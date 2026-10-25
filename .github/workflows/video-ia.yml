@@ -1,0 +1,62 @@
+name: Vidéo IA (Wan 2.2, Hugging Face)
+
+# Modèles vidéo ouverts (famille de Kling) via le calcul gratuit du compte Hugging Face (secret HF_TOKEN).
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "s2v (image + voix), i2v (image + prompt) ou api"
+        default: "s2v"
+      image:
+        description: "Image dans assets/video_ia/"
+        default: "arthemis_gros_plan.png"
+      voix_ou_prompt:
+        description: "s2v : fichier voix dans assets/video_ia/ ; i2v : le prompt"
+        default: "arthemis_s06.mp3"
+      option:
+        description: "s2v : 480P ou 720P ; i2v : durée en secondes"
+        default: "480P"
+      nom:
+        default: "arthemis_s2v"
+
+permissions:
+  contents: write
+
+jobs:
+  video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Générer
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          MODE: ${{ inputs.mode }}
+          IMAGE: ${{ inputs.image }}
+          VP: ${{ inputs.voix_ou_prompt }}
+          OPTION: ${{ inputs.option }}
+          NOM: ${{ inputs.nom }}
+        run: |
+          case "$IMAGE$NOM" in */*|*..*|*" "*) echo "paramètre invalide"; exit 1;; esac
+          pip install -q gradio_client
+          mkdir -p livraison
+          if [ "$MODE" = "api" ]; then python3 scripts/video_ia.py api | tee livraison/api.txt; exit 0; fi
+          if [ "$MODE" = "s2v" ]; then
+            case "$VP" in */*|*..*) echo "voix invalide"; exit 1;; esac
+            python3 scripts/video_ia.py s2v "assets/video_ia/$IMAGE" "assets/video_ia/$VP" "livraison/$NOM.mp4" "$OPTION" 2>&1 | tee livraison/journal.txt
+          else
+            python3 scripts/video_ia.py i2v "assets/video_ia/$IMAGE" "$VP" "livraison/$NOM.mp4" "$OPTION" 2>&1 | tee livraison/journal.txt
+          fi
+      - name: Publier sur la branche « resultats »
+        if: always()
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          D=/tmp/pub; mkdir -p $D/video-${{ github.run_id }}; cp -r livraison/. $D/video-${{ github.run_id }}/ 2>/dev/null || true
+          cd $D && git init -q -b resultats
+          git config user.name "mira-3d-studio"; git config user.email "studio@users.noreply.github.com"
+          U="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          git fetch -q "$U" resultats 2>/dev/null && git reset -q --mixed FETCH_HEAD || true
+          git add video-${{ github.run_id }} && git commit -qm "Vidéo IA ${{ inputs.nom }}" || exit 0
+          for i in 1 2 3 4 5; do git push -q "$U" resultats && break; sleep $((i*5)); git fetch -q "$U" resultats && git rebase -q FETCH_HEAD || true; done
