@@ -1697,7 +1697,7 @@
         "preuve": "Conditions de la FAQ CMU (usage libre, revente des données brutes interdite)",
         "verifiee_le": "2026-10-25"
       },
-      "statut": "importe",
+      "statut": "valide",
       "provenance_fichier": "https://raw.githubusercontent.com/una-dinosauria/cmu-mocap/master/data/002/02_01.bvh",
       "fichiers": [
         "cache/assets/cmu/02_01.bvh"
@@ -1751,7 +1751,7 @@
         "le": "2026-10-25 00:01"
       },
       "apercu": "assets/apercus/cmu_02_01.png",
-      "note": "Retargeting v1 : le rendu de contrôle montrait un mannequin figé (armature cachée pendant le transfert). Corrigé, à revalider."
+      "valide_par": "retargeting contrôlé le 25/10 : amplitudes mesurées (épaule droite 40°, coude 37°, buste 16°) ; jambes non transférées (le mannequin n'a pas de pivots de jambes)"
     },
     "cmu/16_15": {
       "id": "cmu/16_15",

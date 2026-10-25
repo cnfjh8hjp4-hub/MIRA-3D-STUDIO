@@ -39,7 +39,7 @@ Exécutée le 2026-10-25 00:12 UTC, durée totale 12.2 min.
 
 ## Rendus
 - bureau : **termine**, vidéo `sorties/bureau_holographique_PREVIEW.mp4`, contrôle validé, 3.82 s par image
-- retarget : **termine** mais **raté visuellement** (mannequin figé) : voir Problèmes
+- retarget : premier essai **raté visuellement** (mannequin figé), corrigé : 2e essai validé avec mesure d'amplitude (bras 40°, buste 16°), jambes non transférées
 
 ## Problèmes rencontrés
 
