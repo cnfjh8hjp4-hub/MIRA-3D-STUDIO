@@ -1,0 +1,33 @@
+jeton Hugging Face : présent
+Loaded as API: https://zerogpu-aoti-wan2-2-fp8da-aoti-faster.hf.space
+zerogpu-aoti/wan2-2-fp8da-aoti-faster échec : AppError('You have exceeded your free ZeroGPU quota (105s requested vs. 36s left). Try again in 21:17:51. Subscribe to Hugging Face PRO to get 40 min of ZeroGPU quota a day - https://huggingface.co/subscribe/pro?from=ZeroGPU')
+Loaded as API: https://multimodalart-wan2-1-fast.hf.space
+multimodalart/wan2-1-fast échec : AppError('You have exceeded your free ZeroGPU quota (75s requested vs. 36s left). Try again in 21:17:50. Subscribe to Hugging Face PRO to get 40 min of ZeroGPU quota a day - https://huggingface.co/subscribe/pro?from=ZeroGPU')
+Traceback (most recent call last):
+  File "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/scripts/video_ia.py", line 75, in <module>
+    main()
+  File "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/scripts/video_ia.py", line 70, in main
+    raise derniere
+  File "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/scripts/video_ia.py", line 64, in main
+    r = c.predict(input_image=handle_file(img), prompt=prompt, height=832, width=480, negative_prompt=NEG,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/gradio_client/client.py", line 606, in predict
+    ).result()
+      ^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1707, in result
+    return super().result(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1233, in _inner
+    predictions = _predict(*data, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1356, in _predict
+    raise AppError(message=message, **result)
+gradio_client.exceptions.AppError: You have exceeded your free ZeroGPU quota (75s requested vs. 36s left). Try again in 21:17:50. Subscribe to Hugging Face PRO to get 40 min of ZeroGPU quota a day - https://huggingface.co/subscribe/pro?from=ZeroGPU
