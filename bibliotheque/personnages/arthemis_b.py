@@ -31,7 +31,9 @@ def _lum_par_sommet(obj, img):
 
 
 def _attacher(o, arm, os_nom):
-    mw = o.matrix_world.copy(); o.parent = arm; o.parent_type = "BONE"; o.parent_bone = os_nom; o.matrix_world = mw
+    bpy.context.view_layer.update()  # sinon matrix_world n'a pas encore la position donnée (bug du bec aux pieds)
+    mw = o.matrix_world.copy(); o.parent = arm; o.parent_type = "BONE"; o.parent_bone = os_nom
+    bpy.context.view_layer.update(); o.matrix_world = mw
 
 
 def _sphere(nom, loc, echelle, mat):
@@ -86,7 +88,7 @@ def construire(hauteur=1.45):
     bpy.ops.mesh.primitive_cone_add(vertices=20, radius1=r * 0.38, radius2=0, depth=r * 0.8,
                                     location=(0, pointe[1] + r * 0.25, pointe[2] - r * 0.15), rotation=(math.radians(160), 0, 0))
     b = bpy.context.object; b.name = "bec_inf_m"; b.data.materials.append(bec_m); bpy.ops.object.shade_smooth()
-    mw = b.matrix_world.copy(); b.parent = bec; b.matrix_world = mw
+    bpy.context.view_layer.update(); mw = b.matrix_world.copy(); b.parent = bec; bpy.context.view_layer.update(); b.matrix_world = mw
     P["bec_inf"] = bec; P["rayon_oeil"] = r
     return P
 
