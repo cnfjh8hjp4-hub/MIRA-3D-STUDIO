@@ -1,0 +1,12 @@
+{
+  "largeur": 360,
+  "hauteur": 640,
+  "echantillons": 16,
+  "lancer_rayons": false,
+  "qualite_glow": "LOW",
+  "moteur": "eevee",
+  "profil": "PREVIEW",
+  "appareil": "CPU",
+  "prefixe": [],
+  "accord_requis": false
+}

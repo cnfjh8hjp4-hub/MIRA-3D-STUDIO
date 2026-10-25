@@ -1,0 +1,74 @@
+{
+  "scene": "scenes/tests/retarget_cmu.py",
+  "profil": "PREVIEW",
+  "moteur": "cycles",
+  "appareil": "CPU",
+  "via_ecran_virtuel": false,
+  "reglages": {
+    "largeur": 360,
+    "hauteur": 640,
+    "echantillons": 8,
+    "rebonds": 2,
+    "rebonds_reflets": 1,
+    "rebonds_transparence": 8,
+    "debruitage": true,
+    "seuil_adaptatif": 0.05,
+    "qualite_glow": "LOW",
+    "moteur": "cycles",
+    "profil": "PREVIEW",
+    "appareil": "CPU",
+    "accord_requis": false
+  },
+  "materiel": {
+    "cpu": {
+      "coeurs": 4,
+      "modele": "AMD EPYC 7763 64-Core Processor"
+    },
+    "ram_go": 15.6,
+    "gpu": [],
+    "blender": {
+      "chemin": "/usr/local/bin/blender",
+      "version": "Blender 4.2.3 LTS"
+    },
+    "moteurs_ok": [
+      "cycles",
+      "eevee"
+    ]
+  },
+  "projet": "sorties/projets/retarget_cmu_PREVIEW_489d20f53a",
+  "debut": "2026-10-25 00:32:09",
+  "etapes": [],
+  "controle": {
+    "valide": false,
+    "defauts": [
+      {
+        "gravite": "bloquant",
+        "code": "inspection_impossible",
+        "message": "Blender a échoué pendant l'inspection (code 0)"
+      },
+      {
+        "gravite": "bloquant",
+        "code": "erreur_python",
+        "message": "Traceback (most recent call last):\n  File \"/home/runner/blender/4.2/scripts/addons_core/io_anim_bvh/__init__.py\", line 132, in execute\n    return import_bvh.load(context, report=self.report, **keywords)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/blender/4.2/scripts/addons_core/io_anim_bvh/import_bvh.py\", line 667, in load\n    bvh_nodes, bvh_frame_time, bvh_frame_count = read_bvh(\n                                                 ^^^^^^^^^\n  File \"/home/runner/blender/4.2/scripts/addons_core/io_anim_bvh/import_bvh.py\", line 101, in read_bvh\n    file = open(file_path, 'r')\n           ^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/cache/assets/cmu/02_01.bvh'\nLocation: /h"
+      },
+      {
+        "gravite": "avertissement",
+        "code": "erreur_blender",
+        "message": "Error: Error: Python: Traceback (most recent call last):"
+      },
+      {
+        "gravite": "avertissement",
+        "code": "erreur_blender",
+        "message": "Error: Python: Traceback (most recent call last):"
+      },
+      {
+        "gravite": "avertissement",
+        "code": "erreur_blender",
+        "message": "Error: [Errno 2] No such file or directory: '/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/cache/assets/cmu/02_01.bvh'"
+      }
+    ],
+    "journal": "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/sorties/projets/retarget_cmu_PREVIEW_489d20f53a/controle/controle.log"
+  },
+  "statut": "refuse_controle",
+  "duree_totale_s": 0.6
+}
