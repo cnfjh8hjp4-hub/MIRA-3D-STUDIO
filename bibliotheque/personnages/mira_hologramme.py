@@ -31,7 +31,7 @@ def _materiau(img, hauteur, pal=PAL, plancher="#1a8fb0", nom="mira_holo", buste_
     bande.inputs["From Min"].default_value = hauteur * 0.80; bande.inputs["From Max"].default_value = hauteur * 0.84
     bande.inputs["To Min"].default_value = 1.0; bande.inputs["To Max"].default_value = 0.0; L.new(sepz.outputs["Z"], bande.inputs["Value"])
     bas = N.new("ShaderNodeMapRange"); bas.interpolation_type = "SMOOTHSTEP"  # le pantalon garde sa couleur sombre
-    bas.inputs["From Min"].default_value = hauteur * 0.55; bas.inputs["From Max"].default_value = hauteur * 0.58
+    bas.inputs["From Min"].default_value = hauteur * 0.605; bas.inputs["From Max"].default_value = hauteur * 0.625
     L.new(sepz.outputs["Z"], bas.inputs["Value"])
     masque = N.new("ShaderNodeMath"); masque.operation = "MULTIPLY"
     L.new(bande.outputs["Result"], masque.inputs[0]); L.new(bas.outputs["Result"], masque.inputs[1])
