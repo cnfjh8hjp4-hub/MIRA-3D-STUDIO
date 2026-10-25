@@ -1,0 +1,229 @@
+{
+  "scene": "scenes/arthemis_parle.py",
+  "profil": "PREVIEW",
+  "moteur": "cycles",
+  "appareil": "CPU",
+  "via_ecran_virtuel": false,
+  "reglages": {
+    "largeur": 360,
+    "hauteur": 640,
+    "echantillons": 8,
+    "rebonds": 2,
+    "rebonds_reflets": 1,
+    "rebonds_transparence": 8,
+    "debruitage": true,
+    "seuil_adaptatif": 0.05,
+    "qualite_glow": "LOW",
+    "moteur": "cycles",
+    "profil": "PREVIEW",
+    "appareil": "CPU",
+    "accord_requis": false
+  },
+  "materiel": {
+    "cpu": {
+      "coeurs": 4,
+      "modele": "AMD EPYC 9V74 80-Core Processor"
+    },
+    "ram_go": 15.6,
+    "gpu": [],
+    "blender": {
+      "chemin": "/usr/local/bin/blender",
+      "version": "Blender 4.2.3 LTS"
+    },
+    "moteurs_ok": [
+      "cycles",
+      "eevee"
+    ]
+  },
+  "projet": "sorties/projets/arthemis_parle_PREVIEW_7c910b73e8",
+  "debut": "2026-10-24 23:55:39",
+  "etapes": [
+    {
+      "bloc": "1-24",
+      "code": 0,
+      "secondes": 106.45,
+      "essai": 1
+    },
+    {
+      "bloc": "25-48",
+      "code": 0,
+      "secondes": 105.44,
+      "essai": 1
+    },
+    {
+      "bloc": "49-72",
+      "code": 0,
+      "secondes": 104.25,
+      "essai": 1
+    },
+    {
+      "bloc": "73-96",
+      "code": 0,
+      "secondes": 104.72,
+      "essai": 1
+    },
+    {
+      "bloc": "97-120",
+      "code": 0,
+      "secondes": 104.84,
+      "essai": 1
+    },
+    {
+      "bloc": "121-144",
+      "code": 0,
+      "secondes": 105.81,
+      "essai": 1
+    },
+    {
+      "bloc": "145-168",
+      "code": 0,
+      "secondes": 107.6,
+      "essai": 1
+    },
+    {
+      "bloc": "169-192",
+      "code": 0,
+      "secondes": 108.89,
+      "essai": 1
+    },
+    {
+      "bloc": "193-199",
+      "code": 0,
+      "secondes": 32.56,
+      "essai": 1
+    }
+  ],
+  "controle": {
+    "valide": true,
+    "defauts": [],
+    "inspection": {
+      "blender": "4.2.3 LTS",
+      "moteurs_disponibles": [
+        "BLENDER_EEVEE_NEXT"
+      ],
+      "meta": {
+        "nom": "arthemis_parle",
+        "duree_s": 8.3,
+        "fps": 24,
+        "personnages": [
+          "arthemis"
+        ],
+        "audio": "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/scenes/medias/arthemis_s06.mp3",
+        "format": "9:16"
+      },
+      "camera": "camera",
+      "resolution": [
+        360,
+        640
+      ],
+      "fps": 24,
+      "timeline": [
+        1,
+        199
+      ],
+      "duree_s": 8.292,
+      "objets": {
+        "EMPTY": 9,
+        "CAMERA": 1,
+        "LIGHT": 3,
+        "MESH": 80
+      },
+      "materiaux": 14,
+      "geometry_nodes": 1,
+      "ressources_manquantes": [],
+      "audio": [
+        "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/scenes/medias/arthemis_s06.mp3"
+      ],
+      "cadrage": [
+        {
+          "image": 1,
+          "objets_dans_le_champ": 45,
+          "objets": 45
+        },
+        {
+          "image": 100,
+          "objets_dans_le_champ": 45,
+          "objets": 45
+        },
+        {
+          "image": 199,
+          "objets_dans_le_champ": 39,
+          "objets": 45
+        }
+      ],
+      "moteur": "CYCLES"
+    },
+    "images_tests": [
+      "test_0001.png",
+      "test_0100.png",
+      "test_0199.png"
+    ],
+    "analyses": [
+      {
+        "image": "test_0001.png",
+        "luminance_moyenne": 80.1,
+        "contraste": 70.03,
+        "part_noir": 0.0,
+        "part_blanc_brule": 0.0439,
+        "palette_arthemis": 0.664
+      },
+      {
+        "image": "test_0100.png",
+        "luminance_moyenne": 93.98,
+        "contraste": 74.54,
+        "part_noir": 0.0,
+        "part_blanc_brule": 0.0624,
+        "palette_arthemis": 0.707
+      },
+      {
+        "image": "test_0199.png",
+        "luminance_moyenne": 111.05,
+        "contraste": 76.89,
+        "part_noir": 0.0,
+        "part_blanc_brule": 0.082,
+        "palette_arthemis": 0.762
+      }
+    ],
+    "temps_images_tests_s": [
+      4.458,
+      4.284,
+      4.521
+    ],
+    "comparaison_references": {
+      "arthemis": {
+        "disponible": true,
+        "type": "couleurs uniquement (la forme n'est pas comparée)",
+        "similarite_teintes": 0.687,
+        "references": 1
+      }
+    },
+    "journal": "/home/runner/work/MIRA-3D-STUDIO/MIRA-3D-STUDIO/sorties/projets/arthemis_parle_PREVIEW_7c910b73e8/controle/controle.log"
+  },
+  "images_total": 199,
+  "images_deja_validees": 0,
+  "images_a_rendre": 199,
+  "temps_image_test_s": [
+    4.458,
+    4.284,
+    4.521
+  ],
+  "estimation_minutes": 14.8,
+  "images_rendues_ce_passage": 199,
+  "temps_rendu_s": 883.5,
+  "temps_par_image_s": {
+    "moyen": 4.38,
+    "min": 4.285,
+    "max": 4.632
+  },
+  "statut": "termine",
+  "duree_totale_s": 900.6,
+  "video": {
+    "fichier": "sorties/projets/arthemis_parle_PREVIEW_7c910b73e8/arthemis_parle_PREVIEW.mp4",
+    "codec": "h264",
+    "largeur": 360,
+    "hauteur": 640,
+    "images": 199,
+    "duree_s": 8.29
+  },
+  "copie": "sorties/arthemis_parle_PREVIEW.mp4"
+}

@@ -1,0 +1,55 @@
+{
+  "blender": "4.2.3 LTS",
+  "moteurs_disponibles": [
+    "BLENDER_EEVEE_NEXT"
+  ],
+  "meta": {
+    "nom": "arthemis_holo_b",
+    "duree_s": 5,
+    "fps": 24,
+    "personnages": [
+      "arthemis"
+    ],
+    "audio": null,
+    "format": "9:16"
+  },
+  "camera": "camera",
+  "resolution": [
+    720,
+    1280
+  ],
+  "fps": 24,
+  "timeline": [
+    1,
+    120
+  ],
+  "duree_s": 5.0,
+  "objets": {
+    "EMPTY": 2,
+    "MESH": 33,
+    "ARMATURE": 1,
+    "CAMERA": 1
+  },
+  "materiaux": 8,
+  "geometry_nodes": 1,
+  "ressources_manquantes": [],
+  "audio": [],
+  "cadrage": [
+    {
+      "image": 1,
+      "objets_dans_le_champ": 2,
+      "objets": 2
+    },
+    {
+      "image": 60,
+      "objets_dans_le_champ": 2,
+      "objets": 2
+    },
+    {
+      "image": 120,
+      "objets_dans_le_champ": 2,
+      "objets": 2
+    }
+  ],
+  "moteur": "CYCLES"
+}
