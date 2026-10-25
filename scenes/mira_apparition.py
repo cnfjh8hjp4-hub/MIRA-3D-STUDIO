@@ -30,7 +30,7 @@ def construire(meta):
     geonodes.etincelles("etincelles", centre=(0, 0, 1.0), rayon=0.9, densite=6, taille=0.004,
                         materiau=materiaux.emission("etincelle_cyan", PALETTES["mira"]["lumiere"], 9))
     cam, cible = cameras.creer(focale=50, cible_loc=(0, 0, 0.95), dof_fstop=2.4)
-    for t, loc, c in ((0, (0.0, -4.6, 1.0), (0, 0, 0.95)), (2.0, (0.1, -4.0, 1.2), (0, 0, 1.1)), (D, (0.25, -1.6, 1.5), (0, 0, 1.45))):
+    for t, loc, c in ((0, (0.0, -4.6, 1.0), (0, 0, 0.95)), (2.0, (0.1, -4.0, 1.2), (0, 0, 1.1)), (D, (0.25, -2.3, 1.45), (0, 0, 1.35))):
         cam.location = loc; cam.keyframe_insert("location", frame=1 + round(t * fps))
         cible.location = c; cible.keyframe_insert("location", frame=1 + round(t * fps))
     eclairages.monde(meta["fond"], 1.0)

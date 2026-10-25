@@ -25,7 +25,14 @@ def _materiau(img, hauteur, pal=PAL, plancher="#1a8fb0", nom="mira_holo"):
     cr.elements[0].position = 0.0; cr.elements[0].color = hex_vers_lineaire(plancher)  # pas de zones sombres « trouées »
     cr.elements[1].position = 0.9; cr.elements[1].color = hex_vers_lineaire(pal["lumiere"])
     e = cr.elements.new(0.4); e.color = hex_vers_lineaire(pal["principal"])
-    L.new(bw.outputs["Val"], ramp.inputs["Fac"])
+    # buste : luminosité uniforme (l'ombrage de la texture y créait des formes ambiguës) ; visage et cheveux gardent leur détail
+    sepz = N.new("ShaderNodeSeparateXYZ"); L.new(tc.outputs["Object"], sepz.inputs[0])
+    bande = N.new("ShaderNodeMapRange"); bande.interpolation_type = "SMOOTHSTEP"
+    bande.inputs["From Min"].default_value = hauteur * 0.80; bande.inputs["From Max"].default_value = hauteur * 0.84
+    bande.inputs["To Min"].default_value = 1.0; bande.inputs["To Max"].default_value = 0.0; L.new(sepz.outputs["Z"], bande.inputs["Value"])
+    uni = N.new("ShaderNodeMix"); uni.data_type = "FLOAT"; uni.inputs["B"].default_value = 0.55
+    L.new(bande.outputs["Result"], uni.inputs["Factor"]); L.new(bw.outputs["Val"], uni.inputs["A"])
+    L.new(uni.outputs["Result"], ramp.inputs["Fac"])
     lw = N.new("ShaderNodeLayerWeight"); lw.inputs["Blend"].default_value = 0.4
     rim = N.new("ShaderNodeMath"); rim.operation = "POWER"; rim.inputs[1].default_value = 2.0; L.new(lw.outputs["Facing"], rim.inputs[0])
     # lignes de balayage fines qui montent
